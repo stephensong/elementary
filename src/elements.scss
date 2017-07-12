@@ -1,26 +1,54 @@
+@charset 'UTF-8';
 
-// Browser reset and default styles for naked HTML element types.
+/**
+ * Elements
+ *
+ * An aggressive reset style sheet that sets minimalist default styles for naked
+ * HTML elements across all modern web browsers.
+ *
+ * @version   1.0.0
+ * @author    Kieran Potts
+ * @copyright 2017 Kieran Potts
+ * @license   MIT
+*/
 
-// Remove default margins and padding from everything.
+// -----------------------------------------------------------------------------
+// Variables
+// -----------------------------------------------------------------------------
+
+$page-background-color: hsl(0, 100%, 100%);
+
+// -----------------------------------------------------------------------------
+// Global and root-level resets
+// -----------------------------------------------------------------------------
+
+// Remove default margins and padding from all elements. Set the page background
+// and allow layouts to collapse to 320px wide but no less. Smaller screens will
+// have a horizontal scrollbar.
 
 * {
     margin:  0;
     padding: 0;
 }
 
-// Set the page background color to white and allow layouts to collapse to 320px
-// wide but no less (smaller viewports will show a horizontal scrollbar).
-
 html {
-    background: $color_document;
+    background: $page-background-color;
     min-width:  320px;
 }
 
 // Always show the vertical scrollbar, even if there is no overflow, to stop the
-// layout jumping around when users navigate between short pages (with nothing
-// beneath the fold) and long pages (with vertical overflow).
+// layout jumping around when users navigate between short pages, where there is
+// nothing beneath the fold, and long pages with vertical overflow.
 
-body { overflow-y: scroll; }
+body {
+    overflow-y: scroll;
+}
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+// If you want to use embedded fonts, include them here.
 
 // Change the default font to Arial. Use a monospace font for preformatted text,
 // computer code, and input controls. Have everything inherit its font-family
@@ -28,7 +56,11 @@ body { overflow-y: scroll; }
 // and <legend>).
 
 body {
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family:
+        'Arial',
+        'Helvetica Neue',
+        'Helvetica',
+         sans-serif;
     font-weight: normal;
 }
 
@@ -37,32 +69,106 @@ body * {
     font-weight: inherit;
 }
 
-pre, code, var, kbd, samp,
-input, select, textarea {
-    font-family: 'Deja-vu Sans Mono', Monaco, Menlo, Consolas, 'Courier New', monospace;
+code,
+input,
+kbd,
+pre,
+samp,
+select,
+textarea,
+var {
+    font-family:
+        'Deja-vu Sans Mono',
+        'Monaco',
+        'Menlo',
+        'Consolas',
+        'Courier New',
+         monospace;
 }
 
-h1, h2, h3, h4, h5, h6,
+b,
 figcaption,
-strong, b,
-th, tfoot {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+tfoot,
+th {
     font-weight: bold;
 }
 
 // The <var> element is rendered in a monospace font and the browser's default
 // italics are removed, making <var> look the same as <code>, <kbd> and <samp>.
 
-var { font-style: normal; }
+var {
+    font-style: normal;
+}
 
 // Reset the root font size to 10px and have this inherited by everything.
 // Reinforce this for nested lists. (Internet Explorer is not perfectly accurate
 // at calculating root em sizes when the root font size is defined as a
 // percentage, 62.5%. Using px units works just fine.)
 
-html   { font-size: 10px; }
+//html {
+//    font-size: 62.5%; // 10px (10/16*100)
+//}
+//@media screen and (min-width: 760px) {
+//    html {
+//        font-size: 1.31578947368421vw; // 10px (10/760*100)
+//    }
+//}
+//@media screen and (min-width: 1140px) {
+//    html {
+//        // Default font size is now 0.0131578947368421 x 1140 = 15px */
+//        font-size: 93.75%; // 15px (15/16*100)
+//    }
+//}
+
+//html {
+//    font-size: 7.894736842105264px; // (0.8771929824561404/900/100)
+//}
+//@media screen and (min-width: 900px) {
+//    html {
+//        font-size: 0.8771929824561404vw; // 10px (10/1140*100)
+//    }
+//}
+//@media screen and (min-width: 1140px) {
+//    html {
+//        font-size: 62.5%; // 10px (10/16*100)
+//    }
+//}
+
+html {
+    font-size: 15.78947368421053px; // (1.754385964912281*900/100)
+}
+@media screen and (min-width: 900px) {
+    html {
+        font-size: 1.754385964912281vw; // 20px (20/1140*100)
+    }
+}
+@media screen and (min-width: 1140px) {
+    html {
+        font-size: 125%; // 20px (20/16*100)
+    }
+}
+
 html * { font-size: 100%; }
 
-ul ul, ol ol, ul ol, ol ul {
+//html   {
+//    font-size: 10px;
+//}
+
+//html * {
+//    font-size: 100%;
+//}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
     font-size: 100%;
 }
 
@@ -71,17 +177,29 @@ ul ul, ol ol, ul ol, ol ul {
 // (where we set the default font size), but we use the em unit (not rem) here
 // due to a Chrome bug: http://stackoverflow.com/a/20206725
 
-body { font-size: $font_size_body; }
+//body {
+//    font-size: 1em;
+//}
 
-pre, code, var, kbd, samp {
-    font-size: $font_size_monospace;
+body { font-size: 0.8em; }
+
+code,
+kbd,
+pre,
+samp,
+var {
+    font-size: 1rem;
 }
 
-input, select, textarea {
-    font-size: $font_size_input;
+input,
+select,
+textarea {
+    font-size: 1rem;
 }
 
-small { font-size: 100%; }
+small {
+    font-size: 100%;
+}
 
 // Use text-size-adjust to prevent the font size from changing when the
 // orientation of the device changes.
@@ -93,10 +211,15 @@ html {
             text-size-adjust: 100%;
 }
 
-// By default, have line-height precisely match the font size.
+//  By default, have line-height precisely match the font size.
 
-body   { line-height: 1; }
-body * { line-height: inherit; }
+body {
+    line-height: 1;
+}
+
+body * {
+    line-height: inherit;
+}
 
 // The default font color is set on the <body> and allowed to cascade to all
 // elements within the document, even things like legends and form controls
@@ -104,10 +227,17 @@ body * { line-height: inherit; }
 // also inherited as the fill color for embedded SVGs (this can be overridden
 // by application of the inline "fill" attribute).
 
-body   { color: $color_text_default; }
-body * { color: inherit; }
+body {
+    color: hsl(0, 0%, 10%);
+}
 
-svg { fill: currentColor; }
+body * {
+    color: inherit;
+}
+
+svg {
+    fill: currentColor;
+}
 
 // Remove bullets from unordered lists. But do not change the list-style-type
 // property for ordered lists, because doing so will override the "type"
@@ -115,9 +245,18 @@ svg { fill: currentColor; }
 // inside, which generally looks better. Ensure that items within a list inherit
 // the list-style of their parent list container.
 
-ul, ol { list-style-position: inside; }
-ul     { list-style-type: none; }
-li     { list-style: inherit; }
+ol,
+ul {
+    list-style-position: inside;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style: inherit;
+}
 
 // Browsers set the default presentation for horizontal rules in different
 // ways. A horizontal rule's color may be determined by the color or
@@ -125,16 +264,18 @@ li     { list-style: inherit; }
 // design for horizontal rules:
 
 hr {
-    border:     0;
-    border-top: 1px solid $color_text_default;
-    height:     0;
+    border: 0;
+    border-top: 1px solid hsl(0, 0%, 90%);
+    height: 0;
 }
 
 // Do not wrap text within figures or preformatted blocks. Horizontal scrolling
 // is preferred so that the intended presentation of preformatted text is
 // preserved.
 
-figure { overflow: auto; }
+figure {
+    overflow: auto;
+}
 
 pre {
     overflow: auto;
@@ -146,27 +287,50 @@ pre {
 // wrapping within words. This rule must not apply if <code> is nested within
 // <pre>.
 
-code { white-space: nowrap; }
-pre code { white-space: pre; }
+code {
+    white-space: nowrap;
+}
+
+pre code {
+    white-space: pre;
+}
 
 // Remove the dotted underline given to <abbr> and <dfn> elements in some
 // browsers, since their "title" values are inaccessible via most touch-screen
 // interfaces anyway. Remove the default italicised rendering of <dfn> elements,
 // too. The only differential styling for these elements should be the cursor.
 
-abbr, dfn               { text-decoration: none; }
-abbr[title], dfn[title] { cursor: help; }
-dfn                     { font-style: normal; }
+abbr,
+dfn {
+    text-decoration: none;
+}
+
+abbr[title],
+dfn[title] {
+    cursor: help;
+}
+
+dfn {
+    font-style: normal;
+}
 
 // Remove the default italics for <cite>, and the default strikethrough from
 // <del> and <ins> respectively.
 
-cite     { font-style: normal; }
-del, ins { text-decoration: none; }
+cite {
+    font-style: normal;
+}
+
+del,
+ins {
+    text-decoration: none;
+}
 
 // Use a subtler yellow background for marked text.
 
-mark { background: $color_background_marked_text; }
+mark {
+    background: hsl(50, 100%, 50%);
+}
 
 // The default presentation for superscript and subscript affects line-height
 // in all browsers. We'll use a different method to achieve a similar
@@ -174,39 +338,76 @@ mark { background: $color_background_marked_text; }
 
 sub,
 sup {
-    font-size:      75%;
-    line-height:    0;
-    position:       relative;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
     vertical-align: baseline;
 }
 
-sup { top:    -0.5em;  }
-sub { bottom: -0.25em; }
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
 
 // Remove the default font-size for <small> print, converting it into a purely
 // semantic element. The <address> element has been redefined as a sectioning
 // element, but most browsers still treat it as a typographic element and
 // italicize the text. Fix this.
 
-small   { font-size: 100%; }
-address { font-style: normal; }
+small {
+    font-size: 100%;
+}
+
+address {
+    font-style: normal;
+}
 
 // Remove generated quotes from block-level and inline quotes.
 
-blockquote, q { quotes:none; }
+blockquote,
+q {
+    quotes:none;
+}
 
-blockquote::before, blockquote::after,
-q::before, q::after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
     content: '';
 }
 
 // Ensure that pseudo elements always inherit the text-decoration and
 // vertical-align properties of their parents.
 
-::before, ::after {
+::before,
+::after {
     text-decoration: inherit;
-    vertical-align:  inherit;
+    vertical-align: inherit;
 }
+
+// Here's an improved default presentation for selected text. It is a slightly
+// darker version of marked text. The ::-moz-selection and ::selection
+// pseudo-elements will not work if they are combined into the same selector,
+// so keep them separate here:
+
+::-moz-selection {
+    background: $color_background_selected_text;
+    color: $color_text_default;
+    text-shadow: none;
+}
+
+::selection {
+    background: $color_background_selected_text;
+    color: $color_text_default;
+    text-shadow: none;
+}
+
+// -----------------------------------------------------------------------------
+// Tables
+// -----------------------------------------------------------------------------
 
 // Tables: change the default border model from separated to collapsed, which is
 // more convenient for styling. Let's also explicitly set border-spacing to zero,
@@ -216,58 +417,80 @@ q::before, q::after {
 // (empty-cells: show).
 
 table {
-    border:          0;
+    border: 0;
     border-collapse: collapse;
-    border-spacing:  0;
-    empty-cells:     show;
-    table-layout:    auto;
-    text-align:      left;
-    vertical-align:  middle;
-    width:           100%;
+    border-spacing: 0;
+    empty-cells: show;
+    table-layout: auto;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
 }
 
-*[dir="rtl"] table { text-align: right; }
+*[dir="rtl"] table {
+    text-align: right;
+}
 
 // Allow borders, backgrounds and other properties applied to a parent table
 // element to cascade down to individual cells, for convenience. Reinforce the
 // default position of captions; they work best above a table, not under it.
 
-thead, tbody, tfoot,
-tr, th, td {
-    background:     inherit;
-    border:         inherit;
-    font-weight:    inherit;
-    margin:         inherit;
-    padding:        inherit;
-    text-align:     inherit;
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    background: inherit;
+    border: inherit;
+    font-weight: inherit;
+    margin: inherit;
+    padding: inherit;
+    text-align: inherit;
     vertical-align: inherit;
 }
 
-caption { caption-side: top; }
+caption {
+    caption-side: top;
+}
 
-// Remove underlines and outlines from hyperlinks, and have them inherit their
-// color initially. Remove the blue outline that Webkit/Blink browsers apply
-// to focused elements of any type.
+// -----------------------------------------------------------------------------
+// Interactive elements
+// -----------------------------------------------------------------------------
+
+// Remove underlines and outlines from hyperlinks. Remove the blue outline that
+// WebKit/Blink browsers give to focused elements of all types. Have hyperlinks
+// inherit their color, initially.
 
 a {
-    color:           inherit;
-    outline:         none;
+    color: inherit;
+    outline: none;
     text-decoration: none;
 }
 
-*:focus { outline: none; }
+*:focus {
+    outline: none;
+}
 
 // All interactive elements should adopt the pointer cursor, unless they are
 // disabled.
 
-a, button,
-input[type="button"], input[type="image"], input[type="submit"], input[type="reset"],
-input[type="color"], input[type="range"] {
+a,
+button,
+input[type="button"],
+input[type="color"],
+input[type="image"],
+input[type="range"],
+input[type="reset"],
+input[type="submit"] {
     cursor: pointer;
 }
 
 button[disabled],
-input[disabled], keygen[disabled], select[disabled], textarea[disabled] {
+input[disabled],
+keygen[disabled],
+select[disabled],
+textarea[disabled] {
     cursor: default;
 }
 
@@ -275,14 +498,25 @@ input[disabled], keygen[disabled], select[disabled], textarea[disabled] {
 // is important for accessibility that accesskeys are described in the document
 // content, for example in "title" attributes.
 
-*[accesskey]::after { content: ' [' attr(accesskey) ']'; }
+*[accesskey]::after {
+    content: ' [' attr(accesskey) ']';
+}
+
+// -----------------------------------------------------------------------------
+// Forms
+// -----------------------------------------------------------------------------
 
 // Remove the default border around fieldsets; we've already removed padding
 // via the universal selector. Convert the <label> element from inline to block
 // level, since it tends to be used as such.
 
-fieldset { border: 0; }
-label    { display: block; }
+fieldset {
+    border: 0;
+}
+
+label {
+    display: block;
+}
 
 // Convert buttons and most input controls from inline to block-level, and have
 // them fill the full width of their container. Set these elements' vertical
@@ -322,30 +556,35 @@ input[type="tel"],
 input[type="text"],
 input[type="url"],
 input[type="week"],
-keygen, select, textarea {
-    background:     $color_document;
-    border:         0;
-    box-sizing:     border-box;
-    color:          inherit;
-    display:        block;
-    font-family:    inherit;
-    font-size:      100%;
+keygen,
+select,
+textarea {
+    background: #FFF;
+    border: 0;
+    box-sizing: border-box;
+    color: inherit;
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
     vertical-align: baseline; // In case display is changed to inline
-    width:          100%;
+    width: 100%;
 }
 
-select[multiple], select[size] { height: auto; }
+select[multiple],
+select[size] {
+    height: auto;
+}
 
-// Special cases:
+//  Special cases:
 
 input[type="color"] {
     display: inline-block;
-    width:   60px;
+    width: 60px;
 }
 
 input[type="image"] {
     margin: 0 auto; // Centered
-    width:  auto;
+    width: auto;
 }
 
 // Internet Explorer versions 8 and 9 and box-sizing for checkboxes and radio
@@ -354,18 +593,23 @@ input[type="image"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing:     border-box;
-    display:        inline-block;
-    padding:        0;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0;
     vertical-align: baseline;
-    width:          auto;
+    width: auto;
 }
 
 // Buttons are not stylable in iOS by default, but that can be changed by
 // explicitly declaring their appearance property.
 
-button               { -webkit-appearance: button; }
-input[type="search"] { -webkit-appearance: textfield; }
+button {
+    -webkit-appearance: button;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
 
 // Some Webkit browsers apply an OS-specific UI to search fields, which we want
 // to remove along with some inner padding which is applied in Safari 5 and
@@ -382,8 +626,8 @@ input[type="search"]::-webkit-search-decoration {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    padding:      0;
     border-width: 0;
+    padding: 0;
 }
 
 // Firefox bug fix: https://bugzilla.mozilla.org/show_bug.cgi?id=932410
@@ -395,7 +639,7 @@ input[type=range]::-moz-focus-outer {
 // Remove the default italics of optgroup labels and make them bold instead.
 
 optgroup {
-    font-style:  normal;
+    font-style: normal;
     font-weight: bold;
 }
 
@@ -405,8 +649,8 @@ optgroup {
 
 textarea {
     min-height: 10em;
-    overflow:   auto;
-    resize:     none;
+    overflow: auto;
+    resize: none;
 }
 
 // Apply a consistent color for placeholder text. Firefox 19+ gives placeholder
@@ -414,41 +658,39 @@ textarea {
 // browsers. IE needs higher-specificity selectors for its placeholder pseudo
 // element, else it will get overridden by the color property – go figure!
 
-::-webkit-input-placeholder { color: $color_text_quiet; }
-::-moz-placeholder          { color: $color_text_quiet; opacity: 1; }
+::-webkit-input-placeholder {
+    color: $color_text_quiet;
+}
+
+::-moz-placeholder {
+    color: $color_text_quiet;
+    opacity: 1;
+}
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
     color: $color_text_quiet;
 }
 
-// Here's an improved default presentation for selected text. It is a slightly
-// darker version of marked text. The ::-moz-selection and ::selection
-// pseudo-elements will not work if they are combined into the same selector,
-// so keep them separate here:
-
-::-moz-selection {
-    background:  $color_background_selected_text;
-    color:       $color_text_default;
-    text-shadow: none;
-}
-
-::selection {
-    background:  $color_background_selected_text;
-    color:       $color_text_default;
-    text-shadow: none;
-}
+// -----------------------------------------------------------------------------
+// Multimedia
+// -----------------------------------------------------------------------------
 
 // Convert all multimedia elements – images, audo and video, iframes, objects
 // and embedded pluggins – from inline to block-level display, since they are
 // mostly used as such.
 
-audio, video { display: block; }
+audio,
+video {
+    display: block;
+}
 
 // Don't display <audio> elements if they don't have playback controls enabled.
 // That's terrible for usability.
 
-audio:not([controls]) { display: none; }
+audio:not([controls]) {
+    display: none;
+}
 
 // Block-level images are configured to fit the width of the container when they
 // are larger, maintaining their proportions when scaled down. We turn on
@@ -456,11 +698,11 @@ audio:not([controls]) { display: none; }
 // IE 6-9 adds a border when images are put inside hyperlinks.
 
 img {
-    border:                 0;
-    display:                block;
-    height:                 auto;
+    border: 0;
+    display: block;
+    height: auto;
     -ms-interpolation-mode: bicubic;
-    max-width:              100%;
+    max-width: 100%;
 }
 
 // Making video, iframe, object and embed elements responsive is more tricky.
@@ -477,15 +719,19 @@ img {
 
 video {
     background: $color_text_default;
-    max-width:  100%;
-}
-
-object, embed, iframe {
-    display:   block;
     max-width: 100%;
 }
 
-iframe { border: 0; }
+iframe,
+embed,
+object {
+    display: block;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
 
 // Canvas elements are also made to scale proportionally in every browser, and
 // this works well in all mainstream browsers. SVGs are trickier. We can set
@@ -499,21 +745,25 @@ iframe { border: 0; }
 // control over things like the rendered size of fonts.
 
 canvas {
-    display:   block;
-    height:    auto;
+    display: block;
+    height: auto;
     max-width: 100%;
 }
 
 svg {
-    display:   block;
+    display: block;
     max-width: 100%;
 }
 
 // Fix the non-standard overflow on embedded SVGs in IE9:
 
-svg:not(:root) { overflow: hidden; }
+svg:not(:root) {
+    overflow: hidden;
+}
 
-// Polyfills:
+// -----------------------------------------------------------------------------
+// Polyfills
+// -----------------------------------------------------------------------------
 
 // IE 11 and Android 4.3- do not recognise the new <main> element and will not
 // not render it block-level. Internet Explorer 9+ is OK with other new
@@ -531,12 +781,24 @@ svg:not(:root) { overflow: hidden; }
 // the "hidden" attribute (which is not supported natively in IE10-, Firefox 3
 // or Safari 4), and a partial polyfill for the new <template> element.
 
-address, article, aside, details, footer, header, hgroup,
-main, nav, section, summary {
+address,
+article,
+aside,
+details,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
     display: block;
 }
 
-progress, meter  { display: inline-block; }
+meter,
+progress {
+    display: inline-block;
+}
 
 *[unselectable] {
     -webkit-user-select: none;
@@ -545,19 +807,34 @@ progress, meter  { display: inline-block; }
             user-select: none;
 }
 
-*[hidden], template {
+*[hidden],
+template {
     display: none !important;
 }
+
+// -----------------------------------------------------------------------------
+// Clearing
+// -----------------------------------------------------------------------------
 
 // Have all sectioning elements envelope any nested floats, by application of
 // the modern clearfix hack. Let's do the same for figures, forms and fieldsets,
 // which often have floated elements nested inside them.
 
-address, article, aside, blockquote, div,
-fieldset, figure, footer, form, header,
-main, nav, section {
+address,
+article,
+aside,
+blockquote,
+div,
+fieldset,
+figure,
+footer,
+form,
+header,
+main,
+nav,
+section {
     &::after {
-        clear:   both;
+        clear: both;
         content: '';
         display: table;
     }
@@ -568,8 +845,17 @@ main, nav, section {
 // space around any element is determined by the properties of that element
 // and not by anything nested inside it.
 
-:first-child { margin-top:    0 !important; }
-:last-child  { margin-bottom: 0 !important; }
+:first-child {
+    margin-top: 0 !important;
+}
+
+:last-child  {
+    margin-bottom: 0 !important;
+}
+
+// ----------------------------------------------------------------------------
+// Scrollbars
+// ----------------------------------------------------------------------------
 
 // Custom scrollbars, available only for Webkit-based browsers:
 
