@@ -1,0 +1,11 @@
+Thumbs.db
+.DS_Store
+.cvs
+.svn
+*.bak
+*.log
+*.swp
+
+/build
+/node_modules
+/tmp
