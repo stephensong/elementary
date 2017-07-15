@@ -17,6 +17,7 @@
 
 $color-page-background:     hsl(0, 0%, 100%);
 $color-rule:                hsl(0, 0%, 90%);
+$color-text-quiet:          hsl(0, 0%, 70%);
 $color-text-default:        hsl(0, 0%, 10%);
 $color-interactive-default: hsl(200, 100%, 50%);
 $color-interactive-hover:   hsl(200, 100%, 50%);
@@ -724,17 +725,17 @@ input[type="range"]::-moz-focus-outer {
 // will get overridden by the color property – go figure!
 
 ::-webkit-input-placeholder {
-    color: $color_text_quiet;
+    color: $color-text-quiet;
 }
 
 ::-moz-placeholder {
-    color: $color_text_quiet;
+    color: $color-text-quiet;
     opacity: 1;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-    color: $color_text_quiet;
+    color: $color-text-quiet;
 }
 
 // -----------------------------------------------------------------------------
