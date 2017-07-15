@@ -80,15 +80,10 @@ body {
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
-// If your font-family lists will include embedded fonts, link to the font files
-// here. WOFF (Web Open Font Format) works in all modern browsers, including IE9
+// WOFF (Web Open Font Format) works well in every modern browser, including IE9
 // and Android 4.4. WOFF 2, which provides better compression than WOFF 1, works
 // in only a handful of modern browsers as of Jul 2017. Other font formats, such
 // as EOT and TTF/OTF, are not needed except to support very old browsers.
-
-// If you embed your own fonts, rather than load them from a service like Google
-// Fonts or Adobe TypeKit, you will have the flexibility to control the rendered
-// weights simply by flipping out the files linked to each font-weight.
 
 @font-face {
     font-family: 'Roboto';
@@ -138,8 +133,17 @@ body {
          url('fonts/inconsolata/bold.woff') format('woff');
 }
 
-// Use a monospace font for preformatted text, program code, and input controls.
-// Have everything else, including <textarea> and <legend>, inherit their fonts.
+// The default font family is sans-serif. This is inherited by everything in the
+// document - including <textarea> and <legend> elements, which traditionally do
+// not inherit their typography - except where an alternative font is specified.
+// A monospace font is used for preformatted text, program code, input controls,
+// and buttons.
+
+// (Notes: <option>s within <select> boxes inherit the font of their parent, but
+// this isn't true of <datalist> options. We don't get much choice over how they
+// look. Also there are few options for setting the design of <keygen> elements,
+// except in Firefox where they are rendered as standard <select> boxes.)
+
 // Define explicitly which elements should be rendered bold by default. Finally,
 // make <var> consistent with <code>, <kbd>, and <samp>.
 
@@ -153,9 +157,11 @@ body {
     }
 }
 
+button,
 code,
 input,
 kbd,
+keygen,
 pre,
 samp,
 select,
@@ -185,9 +191,9 @@ var {
 // For convenience, change the root element's font size from 16px to 10px. Then,
 // make every other element inherit from this. (This rule must be reinforced for
 // nested lists.) Now, as long as all text nodes are sized relative to the root,
-// you can have everything scale up a little on bigger screens simply by nudging
+// we can have everything scale up a little on bigger screens, simply by nudging
 // the root's font size.
-
+//
 // Internet Explorer is not very accurate at calculating things in rems when the
 // root's font size is defined as a percentage (e.g. 62.5% instead of 10px). So,
 // pixel units are applied to the root <html> element.
@@ -224,8 +230,8 @@ ol ul {
 
 // The default font size is set on the <body> element. It's best to use em units
 // here, not rems, because of a Chrome bug: http://stackoverflow.com/a/20206725.
-// Where the sizes of other block-level elements are different from the default,
-// their sizes are set relative to the root element using root ems.
+// Where font sizes of other block-level elements differ from the default, their
+// font sizes are set relative to the root element using root ems.
 //
 // By default, have line heights precisely match font sizes.
 
@@ -279,8 +285,7 @@ body {
 // For responsive layouts that scale down to fit the width of small screens, the
 // text-size-adjust property should be set to 100%. This means that mobiles will
 // not inflate the size of rendered text in an attempt to make it more readable.
-// Font sizes will be rendered exactly as you specify. This isn't a standard CSS
-// property so requires vendor prefixes.
+// This isn't a standard CSS property so requires vendor prefixes.
 
 html {
     text-rendering: optimizeLegibility;
@@ -307,12 +312,11 @@ svg {
     fill: currentColor;
 }
 
-// Bullets are removed from unordered lists. It is recommended that you define a
-// modifier classes to reapply bullets as and when required (e.g. "ul.bullets").
-// Do not change the list-style-property for ordered lists; doing this makes the
-// type attribute obsolete, which is useful for controlling the numbering format
-// of ordered lists, e.g. <ol type="A">. The position of bullet symbols is moved
-// from the outside to the inside, which generally looks better.
+// Bullets are removed from unordered lists. Modifier classes may be used to set
+// bullets as and when required. The list-style property shouldn't be changed on
+// ordered lists, since this makes the type attribute obsolete. It is useful for
+// controlling the numbering format: <ol type="A">. The position of bullet icons
+// is moved from the outside to the inside, which generally looks better.
 
 ol,
 ul {
@@ -500,7 +504,7 @@ table {
 
 // Allow borders, backgrounds, and other properties to cascade down to all cells
 // within a table. Reinforce the default position of captions; they work best at
-// the top of tables, not on the bottom.
+// the top of tables, not at the bottom.
 
 tbody,
 td,
@@ -533,6 +537,18 @@ a {
     color: $color-interactive-default;
     outline: none;
     text-decoration: none;
+
+    &:hover {
+        color: $color-interactive-hover;
+    }
+
+    &:focus {
+        color: $color-interactive-focus;
+    }
+
+    &:active {
+        color: $color-interactive-active;
+    }
 }
 
 *:focus {
@@ -587,18 +603,10 @@ label {
 
 // Convert buttons and most input controls from inline to block, and get them to
 // fill the full width of their container.
-
-// The <textarea> control is rendered with a monospace font by default but other
-// inputs aren't. Make this consistent by having all inputs and controls inherit
-// their font styles. (Notes: <option> elements within <select> boxes do inherit
-// the font settings of their parent, but this isn't true of <datalist> options.
-// We don't get much control over the presentation of those. Also, there are few
-// available options for controlling the display of <keygen> nodes, except in FF
-// where they are rendered as standard <select> boxes.)
-
+//
 // In Webkit on Mac, <select> boxes can fail to inherit some properties, if they
 // do not have any styling applied to them directly - a weired bug!  Just giving
-// them an explicit background color is enough to eliminate this bug.
+// them an explicit background color is enough to eliminate this error.
 
 button,
 input[type="button"],
@@ -628,7 +636,6 @@ textarea {
     box-sizing: border-box;
     color: inherit;
     display: block;
-    font-family: inherit;
     font-size: 100%;
     width: 100%;
 }
@@ -648,7 +655,7 @@ input[type="image"] {
     width: auto;
 }
 
-// Remove the default italics of <optgroup> labels. Instead, makethem bold. Turn
+// Remove the default italics of <optgroup> labels. Instead make them bold. Turn
 // off textarea resizing and set overflow to auto. Doing so removes the vertical
 // scrollbar in IE6-9 when there is no overflow. Also, we can change the default
 // height of textarea boxes. The height can be increased or decreased on a case-
@@ -707,7 +714,7 @@ input::-moz-focus-inner {
 
 // Another Firefox fix, see https://bugzilla.mozilla.org/show_bug.cgi?id=932410.
 
-input[type=range]::-moz-focus-outer {
+input[type="range"]::-moz-focus-outer {
     border: 0;
 }
 
@@ -753,7 +760,8 @@ audio:not([controls]) {
 // Block-level images are configured to fit the width of the container when they
 // are larger than the container, and they are made to maintain their proportion
 // when scaled down. Bicubic sampling betters the rendering of resized images in
-// IE > 6. IE 6-9 adds a border around images when they are put inside links.
+// IE > 6. IE 6-9 adds a border around images when they are put inside links but
+// that is easily fixed with border:0.
 
 img {
     border: 0;
@@ -763,16 +771,16 @@ img {
     max-width: 100%;
 }
 
-// Making <video> elements responsive is tricky.  The normal trick is to set the
+// Making <video> elements responsive is tricky. The best solution is to set the
 // max-width property to 100%. This video itself will scale down proportionally,
 // but the video container itself will stay a consistent height, resulting in an
 // ugly letterbox effect. Setting the video element's height to auto doesn't fix
 // the problem - the video box just collapses to a default height. The only real
 // solution is to give <video> elements a background color so that the letterbox
-// effect at least doesn't result in weird whitespace.
+// effect at least doesn't result in weird whitespace. Ultimately, the very best
+// solution for responsive video is Thierry Koblentz's hack but you need to know
+// the dimensions of each video for it to work:
 //
-// Note: the best solution for responsive videos is Thierry Koblentz's hack, but
-// it requires knowledge of each video's ratio:
 // http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 
 video {
@@ -841,7 +849,7 @@ summary {
     display: block;
 }
 
-// The standard display setting for <metre> and <progress> needs setting for the
+// The standard display setting for <meter> and <progress> needs setting for the
 // browsers that do not yet natively support these elements.
 
 meter,
