@@ -35,6 +35,5 @@
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/**/*.scss' -c 'npm run sass:build'",
     "dev": "npm-run-all -p sass:*"
-  },
-  "main": "index.js"
+  }
 }
