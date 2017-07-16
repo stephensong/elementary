@@ -36,12 +36,8 @@ $font-family-monospace:
     'Courier New',
     'monospace';
 
-$font-size-title:    2.8rem;
-$font-size-larger:   2.0rem;
-$font-size-large:    1.6rem;
-$font-size-default:  1.2em; // Use ems here, rems for everything else.
-$font-size-code:     1.1rem;
-$font-size-input:    1.1rem;
+$font-size-default:   1.2em; // Use ems here, rems for everything else.
+$font-size-monospace: 1.1rem;
 
 $font-weight-normal: 400;
 $font-weight-bold:   700;
@@ -142,30 +138,20 @@ body {
         font-family: inherit;
         font-weight: inherit; } }
 
-button,
 code,
-input,
 kbd,
-keygen,
 pre,
 samp,
-select,
-textarea,
 var {
     font-family: $font-family-monospace; }
 
 b,
-figcaption,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-tfoot,
-th {
+strong {
     font-weight: $font-weight-bold; }
+
+em,
+i {
+    font-style: italic; }
 
 var {
     font-style: normal; }
@@ -214,29 +200,12 @@ ol ul {
 body {
     font-size: $font-size-default; }
 
-h1 {
-    font-size: $font-size-title; }
-
-h2,
-h3 {
-    font-size: $font-size-larger; }
-
-h4,
-h5,
-h6 {
-    font-size: $font-size-large; }
-
 code,
 kbd,
 pre,
 samp,
 var {
-    font-size: $font-size-code; }
-
-input,
-select,
-textarea {
-    font-size: $font-size-input; }
+    font-size: $font-size-monospace; }
 
 body {
     line-height: 1;
@@ -356,11 +325,9 @@ q {
 cite {
     font-style: normal; }
 
-del {
-    text-decoration: line-through; }
-
+del,
 ins {
-    text-decoration: underline; }
+    text-decoration: none; }
 
 mark {
     background: transparent;
