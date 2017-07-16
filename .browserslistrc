@@ -1,0 +1,6 @@
+# A list of supported web browsers. This configuration is read by the
+# Autoprefixer PostCSS plugin: https://github.com/ai/browserslist
+
+> 1%
+Last 2 versions
+IE 9
