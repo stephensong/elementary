@@ -15,15 +15,10 @@
 // VARIABLES
 // -----------------------------------------------------------------------------
 
-$color-page-background:     hsl(0, 0%, 100%);
-$color-rule:                hsl(0, 0%, 90%);
-$color-text-quiet:          hsl(0, 0%, 70%);
-$color-text-default:        hsl(0, 0%, 10%);
-$color-interactive-default: hsl(200, 100%, 50%);
-$color-interactive-hover:   hsl(200, 100%, 50%);
-$color-interactive-focus:   hsl(200, 100%, 40%);
-$color-interactive-active:  hsl(130, 100%, 40%);
-$color-highlight:           hsl(50, 100%, 50%);
+$color-background-default:     hsl(0, 0%, 100%);
+$color-foreground-placeholder: hsl(0, 0%, 70%);
+$color-foreground-default:     hsl(0, 0%, 10%);
+$color-highlight:              hsl(50, 100%, 50%);
 
 $font-family-sans-serif:
     'Roboto',
@@ -64,7 +59,7 @@ $font-weight-bold:   700;
     padding: 0; }
 
 html {
-    background: $color-page-background;
+    background: $color-background-default;
     min-width: 320px; }
 
 // Always show the vertical scrollbar. This stops the layout jumping around when
@@ -273,7 +268,7 @@ html {
 // the fill attribute.
 
 body {
-    color: $color-text-default;
+    color: $color-foreground-default;
 
     * {
         color: inherit; } }
@@ -302,7 +297,7 @@ li {
 
 hr {
     border: 0;
-    border-top: 1px solid $color-rule;
+    border-top: 1px solid $color-foreground-default;
     height: 0; }
 
 // Text should not be wrapped within figures or preformatted blocks.  Horizontal
@@ -355,8 +350,8 @@ q {
         content: ''; } }
 
 // Remove the default italics of <cite> but keep the underline and strikethrough
-// given to the <del> and <ins> elements respectively. Give the <mark> element a
-// consistent background color and don't have its foreground color inherited.
+// given to the <del> and <ins> elements respectively. Reset the <mark> elements
+// default presentation so it does not appear differently to surrounding text.
 
 cite {
     font-style: normal; }
@@ -368,8 +363,8 @@ ins {
     text-decoration: underline; }
 
 mark {
-    background: $color-highlight;
-    color: $color-text-default; }
+    background: transparent;
+    color: inherit; }
 
 // The default presentation for superscript and subscript affects line-height in
 // all browsers. We'll use a different method to achieve a similar presentation,
@@ -413,12 +408,12 @@ address {
 
 ::-moz-selection {
     background: $color-highlight;
-    color: $color-text-default;
+    color: $color-foreground-default;
     text-shadow: none; }
 
 ::selection {
     background: $color-highlight;
-    color: $color-text-default;
+    color: $color-foreground-default;
     text-shadow: none; }
 
 // -----------------------------------------------------------------------------
@@ -474,18 +469,9 @@ caption {
 // default color of hyperlinks.
 
 a {
-    color: $color-interactive-default;
+    color: inherit;
     outline: none;
-    text-decoration: none;
-
-    &:hover {
-        color: $color-interactive-hover; }
-
-    &:focus {
-        color: $color-interactive-focus; }
-
-    &:active {
-        color: $color-interactive-active; } }
+    text-decoration: none; }
 
 *:focus {
     outline: none; }
@@ -561,7 +547,7 @@ input[type="week"],
 keygen,
 select,
 textarea {
-    background: #FFF;
+    background: transparent;
     border: 0;
     box-sizing: border-box;
     color: inherit;
@@ -642,15 +628,15 @@ input[type="range"]::-moz-focus-outer {
 // will get overridden by the color property – go figure!
 
 ::-webkit-input-placeholder {
-    color: $color-text-quiet; }
+    color: $color-foreground-placeholder; }
 
 ::-moz-placeholder {
-    color: $color-text-quiet;
+    color: $color-foreground-placeholder;
     opacity: 1; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-    color: $color-text-quiet; }
+    color: $color-foreground-placeholder; }
 
 // -----------------------------------------------------------------------------
 // MULTIMEDIA
@@ -696,7 +682,7 @@ img {
 // http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 
 video {
-    background: $color_text_default;
+    background: $color-foreground-default;
     max-width: 100%; }
 
 iframe,
@@ -812,13 +798,7 @@ section {
     width:  14px; }
 
 ::-webkit-scrollbar-track {
-    background: $color-page-background; }
+    background: $color-background-default; }
 
 ::-webkit-scrollbar-thumb {
-    background: $color-interactive-default;
-
-    &:hover {
-        background: $color-interactive-hover; }
-
-    &:active {
-        background: $color-interactive-active; } }
+    background: $color-foreground-default; }
