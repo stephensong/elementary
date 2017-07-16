@@ -2,12 +2,16 @@
 <html dir="ltr" lang="en-GB">
     <head>
         <meta charset="utf-8" />
-        <title>Demo: xxxxx</title>
+        <title>&lt;address&gt;</title>
         <meta content="noindex, nofollow" name="robots" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <link href="../build/elementary.css" rel="stylesheet" media="all" />
+        <link href="../build/elementary.min.css" rel="stylesheet" media="all" />
     </head>
     <body>
-        <!-- TODO -->
+        <p>The <code>&lt;address&gt;</code> element has been reclassified by the W3C as a sectioning element. For this reason we remove the default italicised text applied by most browsers. We also apply the clearfix hack to this and all other sectioning elements. Any nested floats are therefore automatically cleared by the <code>&lt;address&gt;</code> container.</p>
+        <address>
+            <div style="border: 2px dashed red; color: red; float: right; height: 20rem; margin: 2rem; padding: 1rem; width: 20rem;">Float</div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu elementum augue, ac eleifend sem. Nullam consectetur ac diam sit amet pharetra.
+        </address>
     </body>
 </html>

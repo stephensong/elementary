@@ -2,12 +2,16 @@
 <html dir="ltr" lang="en-GB">
     <head>
         <meta charset="utf-8" />
-        <title>Demo: xxxxx</title>
+        <title>&lt;img&gt;</title>
         <meta content="noindex, nofollow" name="robots" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <link href="../build/elementary.css" rel="stylesheet" media="all" />
+        <link href="../build/elementary.min.css" rel="stylesheet" media="all" />
     </head>
     <body>
-        <!-- TODO -->
+        <p>Images are converted from inline display to block-level and are configured to never exceed the width of their container and to maintain their proportions when scaled down.</p>
+        <img alt="Earthrise" height="500" src="./photos/earthrise.jpg" usemap="#map" width="500" />
+        <map name="map" id="map">
+            <area alt="" title="Click on the moon!" href="#" shape="poly" coords="243,261,250,269,255,274,263,278,279,282,291,284,306,286,316,286,322,282,323,271,324,261,319,253,311,242,303,235,287,231,269,232,257,240,250,247" />
+        </map>
     </body>
 </html>

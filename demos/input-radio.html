@@ -2,12 +2,17 @@
 <html dir="ltr" lang="en-GB">
     <head>
         <meta charset="utf-8" />
-        <title>Demo: xxxxx</title>
+        <title>&lt;input type="radio"&gt;</title>
         <meta content="noindex, nofollow" name="robots" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <link href="../build/elementary.css" rel="stylesheet" media="all" />
+        <link href="../build/elementary.min.css" rel="stylesheet" media="all" />
     </head>
     <body>
-        <!-- TODO -->
+        <label><input checked name="color" type="radio" value="red" /> Red</label>
+        <label><input name="color" type="radio" value="green" /> Green</label>
+        <label><input name="color" type="radio" value="blue" /> Blue</label>
+        <label><input checked disabled name="color2" type="radio" value="red" /> Red</label>
+        <label><input disabled name="color2" type="radio" value="green" /> Green</label>
+        <label><input disabled name="color2" type="radio" value="blue" /> Blue</label>
     </body>
 </html>
