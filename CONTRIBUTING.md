@@ -139,7 +139,7 @@ git checkout master
 git pull upstream master
 ```
 
-Return to your feature branch and rebase it on ``master``. The rebasing step will give you the chance to sort out conflicts with the latest work in ``master`` before you make a pull request. The result is that your PR will have a nice clean diff with the project mainline, so your work can be integrated faster. Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to consolidate all of your work into a single commit. 
+Return to your feature branch and [rebase](https://help.github.com/articles/about-git-rebase/) it on ``master``. The rebasing step will give you the chance to sort out conflicts with the latest work in ``master`` before you make a pull request. The result is that your PR will have a nice clean diff with the project mainline, so your work can be integrated faster. Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to consolidate all of your work into a single commit. 
 
 ```
 git checkout issue/<issue-number>-<description>
