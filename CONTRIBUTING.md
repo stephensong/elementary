@@ -1,18 +1,16 @@
 
 # Contributing
 
-This is a free and open source software project. It is made possible by generous contributions from software engineers, both expert and novice, around the world.
+This is a free and open source software project. It is made possible by generous contributions from software engineers, both expert and novice, from around the world.
 
-If you would like to get involved with this project, please get in touch with the project maintainers via the project's [issue tracker](https://github.com/kieranpotts/elementary/issues). This is our exclusive channel for managing all types of contributions: bug reports, feature requests, as well as material changes to the source code.
+If you would like to take part in this project, please create an issue in the project's [issue tracker](https://github.com/kieranpotts/elementary/issues). This is the exclusive channel by which all contributions – bug reports, feature requests, and material changes to the source code – are managed.
+
+The ultimate way to contribute to any open source software project is to submit material changes to its source code, tests, and documentation. This is done using the pull request (PR) workflow. Please raise an issue before submitting pull requests. The project maintainers will review your bug report or feature request, and they will accept or reject it before you spend time implementing the fix or enhancement.
 
 
 ## Pull requests
 
-The ultimate way to contribute to any open source software project is to submit material changes, not only to the source code but also the tests and documentation.
-
-Before submitting pull requests, please open an issue. The project's maintainers will review your bug report or feature request and will approve or reject it before you do the work.
-
-The fork-and-branch workflow is used to manage changes. It allows individual contributors to work in isolation without interfering with anyone else's work.
+The fork-and-branch workflow is used to manage changes to this project's source code. It allows individual contributors to work in isolation without interfering with anyone else's work.
 
 From the project's GitHub page, click "Fork". The project's repository will be cloned in your own GitHub account. The fork is your "origin" repository, while the original is referred to as the "upstream" repository.
 
