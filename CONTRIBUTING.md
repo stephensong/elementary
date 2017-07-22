@@ -28,7 +28,7 @@ Checkout the ``master`` branch:
 git checkout master
 ```
 
-If you want to make changes to a previous release, checkout the relevant version branch. For example:
+If you want to make changes to a previous release, checkout the relevant version branch instead. Example:
 
 ```
 git checkout master/v1.0
@@ -71,20 +71,16 @@ git add
 git commit -a
 ```
 
-When you have finished your work, merge in the latest changes from the ``master`` branch in the upstream repository. To do that, you will need to add another remote pointing to the upstream repository:
+When you have finished your work, fetch the latest changes from the ``master`` branch in the upstream repository. To do that, you will need to add another remote pointing to the upstream repository:
 
 ```
 git remote add upstream https://github.com/kieranpotts/elementary.git
-```
 
-Next, synchronise your local ``master`` branch with the upstream's ``master``: 
-
-```
 git checkout master
 git fetch upstream master
 ```
 
-Now, return to your issue branch and rebase it on ``master``. The rebasing step will give you the chance to sort out conflicts with ``master`` before you make a pull request. Your PR will have a nice clean diff with the project mainline, so your work can be integrated faster. Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to squash all of your work into a single commit. 
+Return to your feature branch and rebase it on ``master``. The rebasing step will give you the chance to sort out conflicts with ``master`` before you make a pull request. Your PR will have a nice clean diff with the project mainline, so your work can be integrated faster. Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to squash all of your work into a single commit. 
 
 ```
 git checkout issue/{issue-number}-{description}
@@ -98,7 +94,7 @@ git add {file1} {file2} ...
 git rebase --continue
 ```
 
-Push your local issue branch to your remote origin repository. Because rebasing changes history, you should use ``-f`` or ``--force`` to force changes into the remote. If someone else is working on the same branch, use the less destructive ``--force-with-lease``.
+Push your local feature branch to your remote origin repository. Because rebasing changes history, you should use ``-f`` or ``--force`` to force changes into the remote. If someone else is working on the same branch, use the less destructive ``--force-with-lease``.
 
 ```
 git push -u -f origin issue/{issue-number}-{description}
@@ -106,7 +102,7 @@ git push -u -f origin issue/{issue-number}-{description}
 
 Now all of your work is in your origin repository, which is attached to your GitHub user account. From there, you can issue a pull request to have your work merged in to the project's upstream repository. Click the "Pull Request" button on GitHub and follow the steps. Be sure to leave checked the "Allow edits from maintainers" option. The maintainers of the upstream repository will review and merge your changes into the main project.
 
-With everything pushed to the remotes, you can safely delete your temporary issue branch from your local repository.
+With everything pushed to the remotes, you can safely delete your feature branch from your local repository.
 
 ```
 git branch -d issue/{issue-number}-{description}
