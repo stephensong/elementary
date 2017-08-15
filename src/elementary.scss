@@ -397,7 +397,7 @@ address {
 // cells are there for a reason, so make sure they are shown.
 
 table {
-    border: 1px solid $color-foreground-default;
+    border: 0;
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
