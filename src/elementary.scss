@@ -528,7 +528,10 @@ input[type="image"] {
 
 optgroup {
     font-style: normal;
-    font-weight: $font-weight-bold; }
+    font-weight: $font-weight-bold;
+
+    option {
+        font-weight: $font-weight-normal; } }
 
 textarea {
     min-height: 10em;
