@@ -19,7 +19,7 @@
     "url": "https://github.com/kieranpotts/elementary/issues"
   },
   "engines": {
-    "node": ">=4.5.0"
+    "node": ">=6.11.0"
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
