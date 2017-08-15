@@ -119,8 +119,7 @@ body {
 // The default font family is sans-serif. This is inherited by everything in the
 // document - including <textarea> and <legend> elements, which traditionally do
 // not inherit their typography - except where an alternative font is specified.
-// A monospace font is used for preformatted text, program code, input controls,
-// and buttons.
+// A monospace font is used for preformatted text and program code.
 
 // (Notes: <option>s within <select> boxes inherit the font of their parent, but
 // this isn't true of <datalist> options. We don't get much choice over how they
@@ -318,15 +317,19 @@ q {
     ::after {
         content: ''; } }
 
-// Remove the default italics of <cite> but keep the underline and strikethrough
-// given to the <del> and <ins> elements respectively. Reset the <mark> elements
-// default presentation so it does not appear differently to surrounding text.
+// Remove the default italics of <cite>, and remove the underline from <ins> and
+// <u>, and remove the strikethrough from <del> and <s>. Change <mark>'s default
+// presentation so it does not appear differently to surrounding text.
 
 cite {
     font-style: normal; }
 
 del,
 ins {
+    text-decoration: none; }
+
+s,
+u {
     text-decoration: none; }
 
 mark {
@@ -394,7 +397,7 @@ address {
 // cells are there for a reason, so make sure they are shown.
 
 table {
-    border: 0;
+    border: 1px solid $color-foreground-default;
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
@@ -448,6 +451,7 @@ a {
 
 a,
 button,
+details,
 input[type="button"],
 input[type="color"],
 input[type="image"],
