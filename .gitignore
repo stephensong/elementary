@@ -1,11 +1,24 @@
-Thumbs.db
-.DS_Store
+# Hidden directories
 .cvs
+.DS_Store
+.grunt
+.idea
 .svn
+
+# Directories
+coverage
+logs
+node_modules
+Thumbs.db
+tmp
+
+# File types
 *.bak
 *.log
 *.swp
 
-/build
-/node_modules
-/tmp
+# Specific files
+npm-debug.log
+
+
+
