@@ -1,4 +1,4 @@
-# [![Elementary CSS](https://cdn.rawgit.com/kieranpotts/elementary/gh-pages/static/logo/elementary-css-logo.350x60.png)](https://www.elementarycss.com/)
+# [![Elementary CSS](https://cdn.rawgit.com/kieranpotts/elementary/gh-pages/static/logo/elementary-css-logo.382x60.png)](https://www.elementarycss.com/)
 
 Elementary CSS is an aggressive reset style sheet.
 
