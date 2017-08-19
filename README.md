@@ -2,15 +2,7 @@
 
 Elementary CSS is an aggressive reset style sheet.
 
-The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further. Replacing the browser's own default style sheet, Elementary CSS provides a more practical baseline from which to compose modern web application interfaces.
-
-- Images and multimedia containers such as ``<video>`` are converted from inline to block-level display, and are made responsive by default.
-- Form elements such as ``<label>``, ``<input>``, and ``<button>``, also have their default ``display`` property changed to ``block``.
-- The default font is changed to Roboto, while Inconsolata is used for monospaced text. 
-- The root font size is changed from 16px to 10px, making it easier to specify relative fonts sizes using root em (``rem``) units. For example, 1.2rem is rendered at 12px (1.2 x 10 = 12). The root font size is bumped up slightly on larger screens, meaning that all text defined in rems will automatically scale in size proportionally to the rendering window.
-- The modern clearfix hack is applied to sectioning elements such as ``<article>`` and ``<section>``, so these containers will always clear any floated elements nested inside them.
-
-See below for a comprehensive list of features.
+The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further, overridding the browser's default style sheet to provide a more practical baseline from which to compose modern web application interfaces.
 
 
 ## Installation
@@ -26,86 +18,65 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 
 ### Typography
 
-The default font becomes Roboto, while Inconsolata is adopted for ``<pre>``, ``<code>``, ``<kbd>``, ``<samp>``, and ``<var>``. This package is shipped with font files in WOFF and WOFF2 formats, encoded with the basic Latin character set.
+- The default font is changed to Roboto. Inconsolata, a monospace font, is adopted for ``<pre>``, ``<code>``, ``<kbd>``, ``<samp>``, and ``<var>``.
+- The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (``rem``) units. For example, 1.2rem is rendered at 12px (1.2 x 10 = 12) on mobile devices.
+- On large screens, the root font size is bumped, meaning that anything sized using rem units will scale proportionally to the rendering window.
+- The non-standard ``text-size-adjust`` property is set to 100%, which is important for responsive designs as without this setting some browsers may attempt to resize text for better legibility.
+- The default font color is changed to ``hsl(0, 0%, 10%)``, which is equivalent to the hex ``#1A1A1A``. 
+- Properties such as ``color``, ``font-family`` and ``font-weight`` are made to be inherited by all elements that can contain text content, including ``<textarea>`` and ``<legend>`` which traditionally have not inherited such properties.
+- The line height of all block-level text is set to be exactly equal to its font size by default.
+- A consistent default presentation for the horizontal rule element (``<hr>``) is applied across all browsers. 
+- Bullets are removed from unordered lists (``<ul>``), but numbering is persisted on ordered lists (``<ol>``) so that the useful ``type`` attribute still works: ``<ol type="A">``. 
+- Only the ``<b>`` and ``<strong>`` elements are rendered with bold text, and only the ``<em>`` and ``<i>`` elements are italicized. Every other element, including ``<cite>`` and ``<address>``, is rendered in the normal font style. Many other default text decorations are removed, such as underlines from ``<u>`` and ``<del>`` and the default background highlight of ``<mark>``.
+- The ``<small>`` element now adopts the ``font-size`` of its parent, turning this into a purely semantic element (it means "small print"). The ``<address>`` element also has been redefined as a sectioning element yet most browsers still treat it as a text node, italicizing its text content. This has been fixed.
+- Generated quotes are removed from ``<blockquote>`` and ``<q>``. 
+- The default implementation of ``<sup>`` and ``<sub>`` affects line height in all browsers. Elementary CSS implements a better methodology to render superscript and subscript text, one which does not bork line height.
+- Where the non-standard ``text-rendering`` property is supported, it is set to ``optimizeLegibility``.
 
-The default font color is changed to ``hsl(0, 0%, 10%)``, which is equivalent to the hex ``#1A1A1A``. This is set on the document ``<body>`` and made to cascade to all elements within the document – even ``<legend>`` and form controls that do not normally inherit the ``color`` property. The ``font-family`` and ``font-weight`` properties are also made to be inherited by all elements, including ``<textarea>`` and ``<legend>`` which traditionally have not inherited these properties. 
-
-Embedded SVGs are configured to inherit the color of adjacent text as their default ``fill`` color. This is a handy hack for inline icons.
-
-The root font size is changed from 16px to 10px, which makes it easier to calculate the rendered size of text elements that are defined in root em units. For example, ``font-size: 1.2rem`` is the equivalent of ``font-size: 12px`` (1.2 x 10) on mobile devices. The root font size is bumped up slightly on larger screens, meaning that all text set in rems will automatically scale in size proportionally to the rendering window. So on large screens ``font-size: 1.2rem`` will be equivalent to  ``font-size: 14px`` or thereabouts.
-
-The non-standard ``text-size-adjust`` property is set to 100%, which is important for responsive designs as without this setting some browsers may attempt to resize text for better legibility.
-
-The line height of all block-level text is set to be exactly equal to its font size by default.
-
-A consistent default presentation for the horizontal rule element (``<hr>``) is applied across all browsers. 
-
-Bullets are removed from unordered lists (``<ul>``), but numbering is persisted on ordered lists (``<ol>``) so that the useful ``type`` attribute still works: ``<ol type="A">``. 
-
-Only the ``<b>`` and ``<strong>`` elements are rendered with bold text, and only the ``<em>`` and ``<i>`` elements are italicized. Every other element, including ``<cite>`` and ``<address>``, is rendered in the normal font style. Many other default text decorations are removed, such as underlines from ``<u>`` and ``<del>`` and the default background highlight of ``<mark>``.
-
-The ``<small>`` element now adopts the ``font-size`` of its parent, turning this into a purely semantic element (it means "small print"). The ``<address>`` element also has been redefined as a sectioning element yet most browsers still treat it as a text node, italicizing its text content. This has been fixed.
-
-Generated quotes are removed from ``<blockquote>`` and ``<q>``. 
-
-The default implementation of ``<sup>`` and ``<sub>`` affects line height in all browsers. Elementary CSS implements a better methodology to render superscript and subscript text, one which does not bork line height.
-
-Where the non-standard ``text-rendering`` property is supported, it is set to ``optimizeLegibility``.
 
 ### Tables
 
-The default border model for tables is changed from ``separated`` to ``collapsed``, which is more convenient for styling. 
-
-Tables cells are configured to adjust their width automatically to best fit their content. 
-
-### Accessibility
-
-Elementary CSS removes the underlines and outlines from hyperlinks, and all focus identifiers are removed from all interactive elements.
-
-All interactive elements, except disabled ones, when hovered over will show the pointer cursor.
-
-Where the ``accesskey`` attribute is used, it is automatically rendered in the element's ``::after`` pseudo element.
+- The default border model for tables is changed from ``separated`` to ``collapsed``, which is more convenient for styling. 
+- Tables cells are configured to adjust their width automatically to best fit their content. 
 
 ### Multimedia elements
 
-All multimedia containers – images, audio, video, iframes, objects, and embedded plugins – are changed from inline to block-level, as they are most commonly used as such.
+- Images and multimedia containers such as ``<video>`` are converted from inline to block-level display, and are made responsive by default.
+- The ``<video>`` element is also made to never exceed the width of its container, and is given a dark background colour so that scaled-down videos are nicely letterboxed. 
+- ``<audio>`` elements are not rendered if they don't have playback controls enabled.
+- Embedded SVGs are configured to inherit the color of adjacent text as their default ``fill`` color. This is a handy hack for inline icons.
 
-The ``<video>`` element is also made to never exceed the width of its container, and is given a dark background colour so that scaled-down videos are nicely letterboxed. ``<audio>`` elements are not rendered if they don't have playback controls enabled.
+### Forms and controls
 
-Images are configured to never exceed the width of their container. When the container is smaller, images will scale down in size and maintain their proportion.
-
-The ``<canvas>`` element and embedded ``<svg>`` graphics are also configured to fill up to 100% of the width of their container. Both are converted from inline to block-level display.
-
-## Forms and controls
-
-Elementary CSS removes the default border around fieldsets, a visual cue that is rarely seen in modern web interfaces.
-
-Buttons, input controls, and the ``<label>`` element are converted to block-level display, since they are commonly rendered as such.
-
-Placeholder text is given a consistent color across all browsers.
+- Form elements such as ``<label>``, ``<input>``, and ``<button>``, also have their default ``display`` property changed to ``block``, since they are commonly used as block-level elements.
+- The defult border put around ``<fieldset>`` elements is removed.
+- Placeholder text is given a consistent color across all browsers.
 
 ### Sectioning elements
 
-All sectioning elements - ``<article>``, ``<header>``, ``<section>``, etc. - are made to envelope any nested floats. This is done by application of the modern clearfix hack. The same is done for ``<figure>``, ``<form>``, and ``<fieldset>``, which often have things floating around inside them.
+- The modern clearfix hack is applied to sectioning elements such as ``<article>`` and ``<section>``, so these containers will always clear any floated elements nested inside them.
+- The ``<address>`` element has been reclassified by the W3C as a sectioning element, so the legacy application of italics to text content is undone.
+- There's a fix in place for IE 11 and Android 4.3-, which do not recognize the ``<main>`` element, to treat is as a block-level component.
 
-The ``<address>`` element has been reclassified by the W3C as a sectioning element. For this reason, Elementary CSS removes the default italicised text given to it by most browsers.
+### Accessibility
 
-There's a fix in place for IE 11 and Android 4.3-, which do not recognize the ``<main>`` element, to treat is as a block-level component.
+- Default underlines and outlines are removed from hyperlinks. 
+- Focus identifiers are removed from all interactive elements.
+- All interactive elements, except disabled ones, when hovered over will show the pointer cursor.
+- Where the ``accesskey`` attribute is used, it is automatically rendered in the element's ``::after`` pseudo element.
 
 ### Miscellany
 
-Margins and padding are removed from all elements globally.
-
-The vertical scrollbar is kept visible, even on pages with no vertical overflow. Custom scrollbars are implemented in WebKit browsers.
-
-We've also got polyfills for IE's proprietary ``unselectable`` attribute, for the ``hidden`` attribute (which is not supported natively in IE 10-, FF 3, Safari 4), and a partial polyfill for the new ``<template>`` element.
+- Margins and padding are removed from all elements globally.
+- The vertical scrollbar is kept visible, even on pages with no vertical overflow. Custom scrollbars are implemented in WebKit browsers.
+- There are polyfills for IE's proprietary ``unselectable`` attribute, for the ``hidden`` attribute, and a partial polyfill for the new ``<template>`` element.
 
 
 ## Browser support
 
-Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification, but which are not yet widely supported among web browsers, like ``<menu>``, are omitted also.
+Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification, but which are not yet widely supported among web browsers, such as ``<menu>``, are omitted also.
 
-Elementary CSS has been tested in the following browsers. In brackets is the [StatCounter](http://gs.statcounter.com/) global market share as of July 2017.
+Elementary CSS has been tested in the following browsers. The figures in brackets are [global market share as of July 2017](http://gs.statcounter.com/).
 
 - Android 4.4 (1%)
 - Chrome 58-60 for Windows, macOS and Ubuntu (22%)
@@ -120,12 +91,12 @@ Elementary CSS has been tested in the following browsers. In brackets is the [St
 - Samsung Internet for Android 4 (3.8%)
 - UC Browser for Android 11.4 (9.1%)
 
-Once a release dips below 1% global market share _in its category_, the minimum supported version is bumped. Note that category share is higher than total market share. For example, Microsoft Edge has about a 1% total market share, but more than 3% in the desktop category and higher still among Windows users.
+Once a browser release dips below 1% global market share _in the browser's category_, the minimum supported version is bumped. Note that category share is higher than total market share. For example, Microsoft Edge has about a 1% total market share, but more than 3% in the desktop category and higher still among Windows users.
 
 
 ## Contributing
 
-To get involved in this project, or to submit bug reports and feature requests, please use the [issue tracker](https://github.com/kieranpotts/elementary/issues). Detailed instructions are provided in the CONTRIBUTING file.
+To get involved in this project, or to submit bug reports and feature requests, please use the [issue tracker](https://github.com/kieranpotts/elementary/issues). 
 
 
 ## Credits
