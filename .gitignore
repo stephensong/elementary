@@ -1,0 +1,24 @@
+# Hidden directories
+.cvs
+.DS_Store
+.grunt
+.idea
+.svn
+
+# Directories
+coverage
+logs
+node_modules
+Thumbs.db
+tmp
+
+# File types
+*.bak
+*.log
+*.swp
+
+# Specific files
+npm-debug.log
+
+
+
