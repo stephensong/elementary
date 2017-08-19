@@ -14,11 +14,12 @@ Download the contents of the ``./src/`` directory and incorporate them into your
 
 ## Features
 
-As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default style sheet.
+As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default styles.
 
 ### Typography
 
-- The default font is changed to Roboto. Inconsolata, a monospace font, is adopted for ``<pre>``, ``<code>``, ``<kbd>``, ``<samp>``, and ``<var>``.
+- The default font is changed to Roboto. 
+- Inconsolata, a monospace font, is adopted for ``<pre>``, ``<code>``, ``<kbd>``, ``<samp>``, and ``<var>``.
 - The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (``rem``) units. For example, 1.2rem is rendered at 12px (1.2 x 10 = 12) on mobile devices.
 - On large screens, the root font size is bumped, meaning that anything sized using rem units will scale proportionally to the rendering window.
 - The non-standard ``text-size-adjust`` property is set to 100%, which is important for responsive designs as without this setting some browsers may attempt to resize text for better legibility.
@@ -33,26 +34,25 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 - The default implementation of ``<sup>`` and ``<sub>`` affects line height in all browsers. Elementary CSS implements a better methodology to render superscript and subscript text, one which does not bork line height.
 - Where the non-standard ``text-rendering`` property is supported, it is set to ``optimizeLegibility``.
 
-
 ### Tables
 
 - The default border model for tables is changed from ``separated`` to ``collapsed``, which is more convenient for styling. 
 - Tables cells are configured to adjust their width automatically to best fit their content. 
 
-### Multimedia elements
+### Multimedia
 
 - Images and multimedia containers such as ``<video>`` are converted from inline to block-level display, and are made responsive by default.
 - The ``<video>`` element is also made to never exceed the width of its container, and is given a dark background colour so that scaled-down videos are nicely letterboxed. 
 - ``<audio>`` elements are not rendered if they don't have playback controls enabled.
 - Embedded SVGs are configured to inherit the color of adjacent text as their default ``fill`` color. This is a handy hack for inline icons.
 
-### Forms and controls
+### Forms
 
 - Form elements such as ``<label>``, ``<input>``, and ``<button>``, also have their default ``display`` property changed to ``block``, since they are commonly used as block-level elements.
 - The defult border put around ``<fieldset>`` elements is removed.
 - Placeholder text is given a consistent color across all browsers.
 
-### Sectioning elements
+### Structure
 
 - The modern clearfix hack is applied to sectioning elements such as ``<article>`` and ``<section>``, so these containers will always clear any floated elements nested inside them.
 - The ``<address>`` element has been reclassified by the W3C as a sectioning element, so the legacy application of italics to text content is undone.
@@ -71,10 +71,10 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 - The vertical scrollbar is kept visible, even on pages with no vertical overflow. Custom scrollbars are implemented in WebKit browsers.
 - There are polyfills for IE's proprietary ``unselectable`` attribute, for the ``hidden`` attribute, and a partial polyfill for the new ``<template>`` element.
 
+Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification but which are not yet widely supported, things like ``<menu>``, are also omitted.
 
-## Browser support
 
-Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification, but which are not yet widely supported among web browsers, such as ``<menu>``, are omitted also.
+## Browsers
 
 Elementary CSS has been tested in the following browsers. The figures in brackets are [global market share as of July 2017](http://gs.statcounter.com/).
 
