@@ -314,7 +314,7 @@ Do not use GitHub's merge option. Instead, checkout the whole branch and test th
 ### Release checklist
 
 - Update the version number in package.json and elementary.scss.
-- Use a dedicated commit to bump the version number. The commit message must be in the format ``v1.0.0``. Use the commit description to list functional changes - this serves as the project's changelog.
+- Use a dedicated commit to bump the version number. The commit message must be in the format ``v1.0.0``. Use the commit description to list functional changes. The same information should be added to the CHANGELOG which can be updated in the same commit.
 - Create an annotated tag on ``master`` for the release: ``git tag -m "v1.0.0" 1.0.0``.
 - Push the changes and tags: ``git push --tags origin master``.
 - Update the  website by checking out the ``gh-pages`` branch and following the instructions in the README in that branch.
