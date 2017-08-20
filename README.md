@@ -2,19 +2,19 @@
 
 Elementary CSS is an aggressive reset style sheet.
 
-The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further, overridding the browser's default style sheet to provide a more practical baseline from which to compose modern web application interfaces.
+The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further, overriding the browser's default style sheet to provide a more practical baseline from which to compose modern web application interfaces.
 
 
 ## Installation
 
-Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. You should change the fonts and colours and create your own set of base styles that are appropriate for your application's GUI.
+Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. You should change the fonts and colors and create your own set of base styles that are appropriate for your application's GUI.
 
 Download the contents of the ``./src/`` directory and incorporate them into your project. You will need a Sass tool to compile ``./src/elementary.scss`` to CSS. Alternatively, you can use the pre-compiled ``./build/elementary.css`` or ``./build/elementary.min.css``.
 
 
 ## Features
 
-As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default styles.
+As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default styles. For a comprehensive list of changes, refer to the comments in ``./src/elementary.scss``.
 
 ### Typography
 
@@ -28,10 +28,11 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 - The line height of all block-level text is set to be exactly equal to its font size by default.
 - A consistent default presentation for the horizontal rule element (``<hr>``) is applied across all browsers. 
 - Bullets are removed from unordered lists (``<ul>``), but numbering is persisted on ordered lists (``<ol>``) so that the useful ``type`` attribute still works: ``<ol type="A">``. 
-- Only the ``<b>`` and ``<strong>`` elements are rendered with bold text, and only the ``<em>`` and ``<i>`` elements are italicized. Every other element, including ``<cite>`` and ``<address>``, is rendered in the normal font style. Many other default text decorations are removed, such as underlines from ``<u>`` and ``<del>`` and the default background highlight of ``<mark>``.
-- The ``<small>`` element now adopts the ``font-size`` of its parent, turning this into a purely semantic element (it means "small print"). The ``<address>`` element also has been redefined as a sectioning element yet most browsers still treat it as a text node, italicizing its text content. This has been fixed.
+- Only the ``<b>`` and ``<strong>`` elements are rendered with bold text, and only the ``<em>`` and ``<i>`` elements are italicized. Every other element, including ``<cite>`` and ``<address>``, is rendered in the normal font style. 
+- Many other default text decorations are removed, such as underlines from ``<u>`` and ``<del>`` and the background color from ``<mark>``.
+- The ``<small>`` element now adopts the ``font-size`` of its parent, turning this into a purely semantic element.
 - Generated quotes are removed from ``<blockquote>`` and ``<q>``. 
-- The default implementation of ``<sup>`` and ``<sub>`` affects line height in all browsers. Elementary CSS implements a better methodology to render superscript and subscript text, one which does not bork line height.
+- The default implementation of ``<sup>`` and ``<sub>`` affects line height in all browsers. A better methodology to render superscript and subscript text is implemented, one which does not affect line height.
 - Where the non-standard ``text-rendering`` property is supported, it is set to ``optimizeLegibility``.
 
 ### Tables
@@ -42,20 +43,20 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 ### Multimedia
 
 - Images and multimedia containers such as ``<video>`` are converted from inline to block-level display, and are made responsive by default.
-- The ``<video>`` element is also made to never exceed the width of its container, and is given a dark background colour so that scaled-down videos are nicely letterboxed. 
+- The ``<video>`` element is given a dark background color so that scaled-down videos are nicely letterboxed. 
 - ``<audio>`` elements are not rendered if they don't have playback controls enabled.
 - Embedded SVGs are configured to inherit the color of adjacent text as their default ``fill`` color. This is a handy hack for inline icons.
 
 ### Forms
 
-- Form elements such as ``<label>``, ``<input>``, and ``<button>``, also have their default ``display`` property changed to ``block``, since they are commonly used as block-level elements.
-- The defult border put around ``<fieldset>`` elements is removed.
+- Form elements such as ``<label>``, ``<input>``, and ``<button>`` have their default ``display`` property changed to ``block``, since they are commonly rendered as block-level elements.
+- The border is removed from ``<fieldset>`` elements.
 - Placeholder text is given a consistent color across all browsers.
 
 ### Structure
 
-- The modern clearfix hack is applied to sectioning elements such as ``<article>`` and ``<section>``, so these containers will always clear any floated elements nested inside them.
-- The ``<address>`` element has been reclassified by the W3C as a sectioning element, so the legacy application of italics to text content is undone.
+- The modern clearfix hack is applied to sectioning elements such as ``<article>`` and ``<section>``, so these containers will always clear any nested floated content.
+- The ``<address>`` element has been reclassified by the W3C as a sectioning element, so the legacy application of italics to text content within this element is removed.
 - There's a fix in place for IE 11 and Android 4.3-, which do not recognize the ``<main>`` element, to treat is as a block-level component.
 
 ### Accessibility
@@ -68,10 +69,9 @@ As well as fixing common cross-browser inconsistencies, Elementary CSS implement
 ### Miscellany
 
 - Margins and padding are removed from all elements globally.
-- The vertical scrollbar is kept visible, even on pages with no vertical overflow. Custom scrollbars are implemented in WebKit browsers.
-- There are polyfills for IE's proprietary ``unselectable`` attribute, for the ``hidden`` attribute, and a partial polyfill for the new ``<template>`` element.
-
-Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification but which are not yet widely supported, things like ``<menu>``, are also omitted.
+- The vertical scrollbar is kept visible, even on pages with no vertical overflow. 
+- Custom scrollbars are implemented in WebKit browsers.
+- There are polyfills for IE's proprietary ``unselectable`` attribute, for the ``hidden`` attribute, and a partial polyfill for the ``<template>`` element.
 
 
 ## Browsers
@@ -80,18 +80,16 @@ Elementary CSS has been tested in the following browsers. The figures in bracket
 
 - Android 4.4 (1%)
 - Chrome 58-60 for Windows, macOS and Ubuntu (22%)
-- Chrome latest for Android (30%)
+- Chrome 60 for Android (30%)
 - Edge 40 (1%)
 - Firefox 54 for Windows, macOS and Ubuntu (3.75%)
 - Internet Explorer 11 (3%)
-- Opera latest (1%)
-- Opera Mini latest (3.3%)
+- Opera 47 (1%)
+- Opera Mini 28 for Android (~3%)
 - Safari 10.1 for macOS (1.3%)
 - Safari 10.2 (1.5%) and 10.3 (8%) for iOS 
 - Samsung Internet for Android 4 (3.8%)
 - UC Browser for Android 11.4 (9.1%)
-
-Once a browser release dips below 1% global market share _in the browser's category_, the minimum supported version is bumped. Note that category share is higher than total market share. For example, Microsoft Edge has about a 1% total market share, but more than 3% in the desktop category and higher still among Windows users.
 
 
 ## Credits
@@ -119,23 +117,23 @@ All contributions – bug reports, feature requests, and material changes to the
 
 ### Feature requests
 
-Feature requests are welcome. Feature requests may be submitted via the [issue tracker](https://github.com/kieranpotts/elementary/issues). Please add the "enhancement" label and prefix the issue title "Idea:".
+Feature requests are welcome. Feature requests may be submitted via the [issue tracker](https://github.com/kieranpotts/elementary/issues). Please add the "enhancement" label and prefix the title "Idea:".
 
 Take a moment to consider whether your idea fits with the scope and aims of the project, and what are the benefits versus costs of adding the feature.
 
 ### Bug reports
 
-Before reporting a bug, please check that it has not already been reported previously by searching our [issue tracker](https://github.com/kieranpotts/elementary/issues). Also check that the problem has not already been fixed by trying to reproduce the problem in the ``master`` branch.
+Before reporting a bug, please check that it has not already been reported previously by searching the [issue tracker](https://github.com/kieranpotts/elementary/issues). Also check that the problem has not already been fixed by trying to reproduce the problem in the ``master`` branch.
 
-In order to fix an error, the software maintainers must be able to reproduce it. This requires you to be able to demonstrate the bug. A good bug report will therefore include at least one of the following:
+To fix an error, the software maintainers must be able to reproduce it. This requires you to be able to demonstrate the bug. A good bug report will therefore include at least one of the following:
 
 - Detailed step-by-step instructions to reproduce the error.
 - A live example of the problem, e.g. a [Codepen](http://codepen.io/).
 - A reduced test case, like the ones in our ``./tests/`` directory.
 
-Please provide details of the browser name, version number, and operating system in which you experienced the error. Describe the outcome your expected, and what's different in the actual outcome.
+Please provide details of the browser name, version number, and operating system in which you experienced the error. Describe the outcome your expected, and what's different about the actual outcome.
 
-If you are able to identify the source of the bug, such as a specific line or block of code, please include this information in your bug report, too.
+If you can identify the source of the bug, such as a specific line or block of code, please include this information in your bug report, too.
 
 ### Source changes
 
@@ -145,9 +143,11 @@ Please raise an issue before making a pull request. The project maintainers will
 
 The fork-and-branch workflow is used to manage changes to the project's source code. This allows individual contributors to work in isolation without interfering with anyone else's work.
 
+The steps are as follows:
+
 #### 1. Fork
 
-From the project's GitHub page, click "Fork". The project's repository will be cloned in your own GitHub account. The fork is your "origin" repository, while the main one is referred to as the "upstream" repository.
+From the project's GitHub page, click "Fork". The project's repository will be cloned in your own GitHub account. The fork is your "origin" repository, while the main project repository is referred to as the "upstream" repository.
 
 #### 2. Clone
 
@@ -159,13 +159,13 @@ git clone https://github.com/<your-github-username>/elementary.git
 
 The copy of the project that now exists on your computer is your "local" repository. This is where you'll do your work. 
 
-When you run the ``git clone`` command, Git automatically adds a remote named "origin", which you will push back to when you've made your changes in your local repository. You should add another remote that references the upstream repository. From the root directory of your newly cloned local repository, run the following command in your terminal:
+When you run the ``git clone`` command, Git automatically adds a remote named "origin", which you will push back to when you've made changes in your local repository. You should add another remote that references the upstream repository. From the root directory of your newly cloned local repository, run the following command in your terminal:
 
 ```
 git remote add upstream https://github.com/kieranpotts/elementary.git
 ```
 
-#### 3. Checkout the project's mainline
+#### 3. Checkout
 
 Checkout the ``master`` branch:
 
@@ -179,8 +179,6 @@ If you want to make changes to a previous release, checkout the relevant version
 git checkout master/v1
 ```
 
-(Note that we do not use a ``develop`` branch in our workflow.)
-
 Pull down the contents of this branch from your origin repository:
 
 ```
@@ -188,17 +186,25 @@ git fetch origin
 git merge origin
 ```
 
-(These two commands are equivalent to ``git pull origin master``.)
+These two commands are equivalent to ``git pull origin master``.
 
-#### 4. Branch from the mainline
+#### 4. Branch
 
-Never make commits directly into ``master``. Instead, branch off from ``master`` to create a temporary branch, where you will make your changes. Please use the following naming convention for your feature branch: 
+Never make commits directly into ``master``. Instead, branch off from ``master`` to create a temporary branch, where you will make your changes. Please use the following naming convention for the new branch: 
 
 ```
 issue/<issue-number>-<description>
 ```
 
-Where ``<issue-number>`` is the number of the issue that you created in the issue tracker. Following this naming convention will help the project maintainers to review and integrate your work later.
+``<issue-number>`` is the number of the issue that you opened in our issue tracker. ``<description>`` is a concise slug that describes the feature or bug. Example:
+
+```
+issue/21-improve-pre-line-height
+```
+
+Following this naming convention will help the project maintainers to review and integrate your work later, because each pull request will explicitly reference an open issue.
+
+Use the following ``git`` commands to create and checkout the issue branch:
 
 ```
 git branch issue/<issue-number>-<description>
@@ -214,18 +220,16 @@ git checkout -b issue/<issue-number>-<description>
 Example:
 
 ```
-git checkout -b issue/51-preformatted-text-line-height-increase
+git checkout -b issue/21-improve-pre-line-height
 ```
 
-#### 5. Do your work
+#### 5. Stage and commit
 
-Undertake your work in your feature branch.
+Undertake your work in your issue branch.
 
-If you are making substantive changes over a long period of time, you should make regular commits, organising your changes in logical iterations. Also, long-lived feature branches should be kept synchronised with the project mainline, and you may like to backup your work as you go by pushing to your origin repository on GitHub. See the next steps for instructions.
+If you are making substantive changes over a long period, you should make regular commits, organizing your changes in logical iterations. Long-lived feature branches should be kept synchronized with the project mainline, and you may like to backup your work by pushing regularly to your origin repository on GitHub. See below for instructions.
 
 Be sure to add or update the relevant reduced test cases, which are in the ``./tests`` directory. The reduced test cases are plain HTML documents that demonstrate the effect of the Elementary CSS style sheet on isolated HTML elements.
-
-#### 5. Stage and commit changes
 
 Make your changes, and stage and commit them. Using the ``-a`` flag on commit will allow you to submit a commit subject plus a more detailed body message, if you wish.
 
@@ -234,7 +238,7 @@ git add
 git commit -a
 ```
 
-#### 6. Synchronise with the project's mainline
+#### 6. Synchronize
 
 If it has been a while since you cloned and checked out the project, you should fetch the latest changes from the ``master`` branch in the upstream repository.
 
@@ -243,18 +247,22 @@ git checkout master
 git pull upstream master
 ```
 
-Return to your feature branch and [rebase](https://help.github.com/articles/about-git-rebase/) it on ``master``. The rebasing step will give you the chance to sort out conflicts with the latest work in ``master`` before you make a pull request. The result is that your PR will have a nice clean diff with the project mainline, so your work can be integrated faster. Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to consolidate all of your work into a single commit. 
+Return to your issue branch and [rebase](https://help.github.com/articles/about-git-rebase/) it on ``master``.
 
 ```
-git checkout issue/<issue-number>-<description>
+git checkout issue/21-improve-pre-line-height
 git rebase -i --autosquash master
 ```
 
-As a shortcut, you can rebase the upstream ``master`` branch directly into your local feature branch:
+As a shortcut, you can rebase the upstream ``master`` branch directly into your local issue branch:
 
 ```
 git pull --rebase -i upstream master
 ```
+
+The rebasing step will give you the chance to sort out conflicts with the latest work in the project mainline before you make a pull request. The result is that your PR will have a nice clean diff, so your work can be integrated faster. 
+
+Interactive rebasing, using the ``-i`` or ``-interactive`` flag, is recommended. It will allow you to clean up your commit history before submitting your work. You can edit old commits, split them up, reorder them, and even squash some. If you have a particularly messy commit history, you may choose to use ``--autosquash`` to consolidate all of your work into a single commit. 
 
 If you have conflicts, resolve them, and then continue the rebase.
 
@@ -265,10 +273,10 @@ git rebase --continue
 
 #### 7. Push
 
-Push your local feature branch to your remote origin repository. Because rebasing changes history, you should use ``-f`` or ``--force`` to force changes into the remote.
+Push the changes your local issue branch to your remote origin repository. Because rebasing changes history, you should use ``-f`` or ``--force`` to force changes into the remote.
 
 ```
-git push -f origin issue/<issue-number>-<description>
+git push -f origin issue/21-improve-pre-line-height
 ```
 
 If someone else is working on the same branch, use the less destructive ``--force-with-lease``.
@@ -276,18 +284,18 @@ If someone else is working on the same branch, use the less destructive ``--forc
 
 #### 8. Pull request
 
-Now all of your work is in your origin repository, which is attached to your GitHub user account. From the GitHub page for your origin repository, you can issue a [pull request](https://help.github.com/articles/about-pull-requests/) to have your work merged in to the project's upstream repository. Click the "Pull Request" button on GitHub and follow the steps. Provide a clear title and description, and be sure to leave checked the option to "allow edits from maintainers". 
+Now all your work is in your origin repository, which is attached to your GitHub user account. From the GitHub page for your origin repository, issue a [pull request](https://help.github.com/articles/about-pull-requests/) to have your work merged in to the project's upstream repository. Click the "Pull Request" button on GitHub and follow the steps. Provide a clear title and description, and be sure to leave checked the option to "allow edits from maintainers". 
 
-The maintainers of the upstream repository will review and merge your changes into the main project.
+The maintainers of the upstream repository will review and merge your changes into the project.
 
-**IMPORTANT: By opening a pull request, you agree to allow the project maintainers to license your work under the same terms as the project.**
+_By opening a pull request, you agree to allow the project maintainers to license your work under the same terms as the project._
 
 #### 9. Tidy up
 
-With everything pushed to the remotes, you can safely delete your feature branch from your local repository.
+With everything pushed to the remotes, you can safely delete the temporary issue branch from your local repository.
 
 ```
-git branch -d issue/<issue-number>-<description>
+git branch -d issue/21-improve-pre-line-height
 ```
 
 
@@ -295,7 +303,7 @@ git branch -d issue/<issue-number>-<description>
 
 ### Pull requests
 
-Pull requests are expected to be made from branches with the following naming convention and corresponding to an open issue:
+Pull requests are expected to be made into ``master`` from branches with the following naming convention and corresponding to an open issue:
 
 ```
 issue/<issue-number>-<description>
@@ -305,18 +313,25 @@ Do not use GitHub's merge option. Instead, checkout the whole branch and test th
 
 ### Release checklist
 
-- Update the version number in the CHANGELOG, package.json, and elementary.scss.
-- List functional changes in the CHANGELOG.
-- Use a dedicated commit to bump the version number. The commit message must be in the format ``v1.0.0``.
+- Update the version number in package.json and elementary.scss.
+- Use a dedicated commit to bump the version number. The commit message must be in the format ``v1.0.0``. Use the commit description to list functional changes - this serves as the project's changelog.
 - Create an annotated tag on ``master`` for the release: ``git tag -m "v1.0.0" 1.0.0``.
 - Push the changes and tags: ``git push --tags origin master``.
-- Update the  website by checking out the ``gh-pages`` branch and following the instructions in the README.
+- Update the  website by checking out the ``gh-pages`` branch and following the instructions in the README in that branch.
 
 ### Semantic versioning
 
 [Semver](http://semver.org/) is the gold standard for software version numbering. Version numbers are written as ``v<major>.<minor>.<patch>``, e.g. ``v1.0.5``.
 
-_Any_ change to _any_ CSS selector or rule will break backwards compatibility. Therefore, all CSS changes will increment the **major** version number. Comments and formatting changes will bump the **patch** number. There is no type of change that can be made to CSS that is **minor**. 
+_Any_ change to _any_ CSS selector or rule will break backwards compatibility. Therefore, all CSS changes will increment the major version number. Comments and formatting changes will bump the patch number. There is no type of change that can be made to CSS that is considered to be minor.
+
+### Standards
+
+Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like ``<acronym>`` and ``<center>``. New HTML elements that have been recently added to the specification but which are not yet widely supported, things like ``<menu>``, are also omitted.
+
+### Compatibility
+
+Once a browser release dips below 1% global market share _in the browser's category_, the minimum supported version is bumped. Note that category share is higher than total market share. For example, Microsoft Edge has about a 1% total market share, but more than 3% in the desktop category and higher still among Windows users.
 
 
 ## License
