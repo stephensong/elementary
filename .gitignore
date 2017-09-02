@@ -6,7 +6,9 @@
 .svn
 
 # Directories
+build
 coverage
+dist
 logs
 node_modules
 Thumbs.db
@@ -19,6 +21,4 @@ tmp
 
 # Specific files
 npm-debug.log
-
-
 
