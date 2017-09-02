@@ -1,13 +1,13 @@
-# Auto detect text files and normalize
-# line-endings to Unix (LF).
+# Auto detect text files and
+# normalize line-endings to Unix (LF)
 * text=auto
 
-# Treat SVGs as text files. They are
-# handled as assets (binary) by default.
+# Treat SVGs as text files. They are handled
+# as assets (binary) by default
 *.svg text
 
 # Process these files as assets (binary).
-# Line endings will not be normalized.
+# Line endings will not be normalized
 *.eps binary
 *.gif binary
 *.ico binary
@@ -17,8 +17,8 @@
 *.tif binary
 *.tiff binary
 
-# Exclude these files and directories from zipped
-# archives of the repository.
+# Exclude these files and directories from
+# zipped archives of the repository
 /.codeclimate.yml export-ignore
 /.coveralls.yml export-ignore
 /.editorconfig export-ignore
