@@ -1,24 +1,23 @@
-# Hidden directories
+# Exclude the following directories and
+# file types from source control:
+
+# Directories:
 .cvs
 .DS_Store
 .grunt
 .idea
 .svn
-
-# Directories
+.tmp
+.todo
+build
 coverage
+dist
 logs
 node_modules
 Thumbs.db
 tmp
 
-# File types
+# Files:
 *.bak
 *.log
 *.swp
-
-# Specific files
-npm-debug.log
-
-
-

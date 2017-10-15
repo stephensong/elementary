@@ -113,5 +113,5 @@ For instructions, please refer to the CONTRIBUTING document, which is distribute
 
 ## License
 
-The MIT License (MIT) \
+MIT License \
 Copyright (c) 2017 Kieran Potts
