@@ -1,5 +1,4 @@
-# Developing
-
+# Maintaining
 Documentation for the development process and guidelines for project maintainers.
 
 ### Pull requests
