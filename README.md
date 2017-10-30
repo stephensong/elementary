@@ -1,5 +1,4 @@
 # [![Elementary CSS](https://cdn.rawgit.com/kieranpotts/elementary/logo/build/elementary-css-logo.382x60.png)](https://www.elementarycss.com/)
-
 Elementary CSS is an aggressive reset style sheet.
 
 The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further, overriding the browser's default style sheet to provide a more practical baseline from which to compose modern web application interfaces.
