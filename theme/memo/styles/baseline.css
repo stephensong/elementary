@@ -532,7 +532,11 @@ section::after {
  * @license   MIT
  */
 
-.CONTAINER {}
+.CONTAINER {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1rem;
+}
 
 .WRAPPER {}
 
