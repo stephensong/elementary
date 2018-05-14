@@ -101,3 +101,12 @@ var {
     } 
 }
 
+/**
+ * Components
+ */
+
+/* RichText */
+
+.RichText ul li::before {
+    margin-top: 0;
+}
