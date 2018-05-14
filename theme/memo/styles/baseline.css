@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 /**
  * Elementary CSS
@@ -588,7 +588,7 @@ section::after {
     margin-bottom: 2rem;
 }
 
-.Menu .menu-list::last-child {
+.Menu .menu-list:last-child {
     margin-bottom: 0;
 }
 
