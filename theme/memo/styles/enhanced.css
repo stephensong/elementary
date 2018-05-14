@@ -1,0 +1,100 @@
+@charset 'UTF-8';
+
+/**
+ * Custom fonts
+ */
+
+ @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto/light.woff2') format('woff2'),
+         url('../fonts/roboto/light.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/roboto/light-italic.woff2') format('woff2'),
+         url('../fonts/roboto/light-italic.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/roboto/medium.woff2') format('woff2'),
+         url('../fonts/roboto/medium.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/roboto/medium.woff2') format('woff2'),
+         url('../fonts/roboto/medium.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/inconsolata/regular.woff2') format('woff2'),
+         url('../fonts/inconsolata/regular.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/inconsolata/bold.woff2') format('woff2'),
+         url('../fonts/inconsolata/bold.woff') format('woff'); 
+}
+
+body {
+    font-family:
+        'Roboto',
+        'Arial',
+        'Helvetica',
+        'Helvetica Neue',
+        'sans-serif';
+}
+
+code,
+kbd,
+pre,
+samp,
+var {
+    font-family:
+        'Inconsolata',
+        'Deja-vu Sans Mono',
+        'Monaco',
+        'Menlo',
+        'Consolas',
+        'Courier New',
+        'monospace'; 
+}
+
+/**
+ * Global responsive breakpoints
+ */
+
+@media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
+    html {
+        font-size: 10px + 0.5; 
+    } 
+}
+
+@media screen and (min-width: 75rem) and (min-height: 37.5rem) {
+    html {
+        font-size: 10px + 1; 
+    } 
+}
+
+@media screen and (min-width: 93.75rem) and (min-height: 50rem) {
+    html {
+        font-size: 10px + 1.5; 
+    } 
+}
+
