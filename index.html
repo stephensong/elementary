@@ -37,9 +37,109 @@
             <main class="MAIN">
                 <div class="CONTAINER">
                     <div class="RichText">
-                        <p>xxxxx</p>
+
                         <h2 id="introduction">Introduction</h2>
+
                         <p>An aggressive reset style sheet that sets minimalist default styles for naked HTML elements across all modern web browsers.</p>
+
+                        <p>The principal purpose of a reset style sheet is to iron out inconsistencies in the default presentation given to HTML elements by web browsers. Elementary CSS goes further, overriding the browser's default style sheet to provide a more practical baseline from which to compose modern web application interfaces.</p>
+
+                        <h2 id="installation">Installation</h2>
+
+                        <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. You should change the fonts and colors and create your own set of base styles that are appropriate for your application's GUI.</p>
+
+                        <p>Download the contents of the <code>./src/</code> directory and incorporate them into your project. You will need a Sass tool to compile <code>./src/elementary.scss</code> to CSS. Alternatively, you can use the pre-compiled <code>./build/elementary.css</code> or the minified version <code>./build/elementary.min.css</code>.</p>
+
+                        <h2 id="features">Features</h2>
+
+                        <p>As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default styles.</p>
+
+                        <h3>Typography</h3>
+
+                        <ul>
+                            <li>The default font is set to Roboto.</li>
+                            <li>Inconsolata, a monospace font, is adopted for <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, and <code>&lt;var&gt;</code>.</li>
+                            <li>The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (<code>rem</code>) units. For example, 1.2rem is rendered at 12px (1.2 x 10 = 12) on mobile devices.</li>
+                            <li>On larger screens, the root font size is bumped, meaning that anything sized using rem units will scale proportionally to the rendering window.</li>
+                            <li>The default font color is changed to <code>hsl(0, 0%, 10%)</code>, which is equivalent to the hex <code>#1A1A1A</code>.</li>
+                            <li>Properties such as <code>color</code>, <code>font-family</code> and <code>font-weight</code> are made to be inherited by all elements, including <code>&lt;textarea&gt;</code> and <code>&lt;legend&gt;</code> which traditionally have not inherited these properties.</li>
+                            <li>The <code>line-height</code> of all block-level text is set to 1x its <code>font-size</code>.</li>
+                            <li>Bullets are removed from unordered lists (<code>&lt;ul&gt;</code>), but numbering is persisted on ordered lists (<code>&lt;ol&gt;</code>) so that the useful <code>type</code> attribute still works: <code>&lt;ol type="A"&gt;</code>.</li>
+                            <li>Only the <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code> elements are rendered with bold text, and only the <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code> elements are italicized. Every other element, including <code>&lt;cite&gt;</code> and <code>&lt;address&gt;</code>, is rendered in the normal font style.</li>
+                            <li>Many other default text decorations are removed, such as underlines from <code>&lt;u&gt;</code> and <code>&lt;del&gt;</code>, the background color from <code>&lt;mark&gt;</code>, and generated quotes from <code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code>.</li>
+                            <li>The <code>&lt;small&gt;</code> element now adopts the <code>font-size</code> of its parent, turning this into a purely semantic tag.</li>
+                            <li>A consistent default presentation for the horizontal rule element (<code>&lt;hr&gt;</code>) is applied across all browsers.</li>
+                            <li>The default implementation of <code>&lt;sup&gt;</code> and <code>&lt;sub&gt;</code> affects line height in all browsers. A better methodology to render superscript and subscript text is adopted, one which does not affect line height.</li>
+                        </ul>
+
+                        <h3>Tables</h3>
+
+                        <ul>
+                            <li>The default border model for tables is changed from <code>separated</code> to <code>collapsed</code>, which is more convenient for styling.</li>
+                            <li>Tables cells are configured to adjust their width automatically to best fit their content.</li>
+                        </ul>
+
+                        <h3>Multimedia</h3>
+
+                        <ul>
+                            <li>Images and multimedia containers such as <code>&lt;video&gt;</code> are converted from inline to block-level display, and are made responsive by default.</li>
+                            <li>The <code>&lt;video&gt;</code> element is given a dark background color so that scaled-down videos are nicely letterboxed.</li>
+                            <li><code>&lt;audio&gt;</code> elements are not rendered if they don't have playback controls enabled.</li>
+                            <li>Embedded SVGs are configured to inherit the color of adjacent text as their default <code>fill</code>. This is a handy hack for inline icons.</li>
+                        </ul>
+
+                        <h3>Forms</h3>
+
+                        <ul>
+                            <li>Form elements such as <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, and <code>&lt;button&gt;</code> have their <code>display</code> property changed to <code>block</code>, since they are commonly rendered as block-level elements.</li>
+                            <li>The border around <code>&lt;fieldset&gt;</code> containers is removed.</li>
+                            <li>Placeholder text is given a consistent color across all browsers.</li>
+                        </ul>
+
+                        <h3>Structure</h3>
+
+                        <ul>
+                            <li>The modern clearfix hack is applied to sectioning elements such as <code>&lt;header&gt;</code> and <code>&lt;article&gt;</code>, so these containers will always clear any nested floated content.</li>
+                            <li>The <code>&lt;address&gt;</code> element has been reclassified as a sectioning element, so the legacy application of italics to text content within this element is removed.</li>
+                        </ul>
+
+                        <h3>Accessibility</h3>
+
+                        <ul>
+                            <li>The browser's default underlines and outlines are removed from hyperlinks, and focus identifiers are removed from everything.</li>
+                            <li>All interactive elements when hovered over will show the pointer cursor, except when disabled.</li>
+                            <li>Where the <code>accesskey</code> attribute is used, its value is rendered in the element's <code>::after</code> pseudo element.</li>
+                        </ul>
+
+                        <h3>Miscellany</h3>
+
+                        <ul>
+                            <li>Margins and padding are removed from all elements globally.</li>
+                            <li>The vertical scrollbar is kept visible, even on pages with no vertical overflow.</li>
+                            <li>Custom scrollbars are implemented in WebKit browsers.</li>
+                            <li>There are polyfills for IE's proprietary <code>unselectable</code> attribute, for the <code>hidden</code> attribute, the <code>&lt;main&gt;</code> element, and a partial polyfill for the <code>&lt;template&gt;</code> element.</li>
+                        </ul>
+
+
+                        <h2>Browsers</h2>
+
+                        <p>Elementary CSS has been tested in the following browsers. The figures in brackets are [global market share as of July 2017](http://gs.statcounter.com/).</p>
+
+                        <ul>
+                            <li>Android 4.4 (1%)</li>
+                            <li>Chrome 58-60 for Windows, macOS and Ubuntu (22%)</li>
+                            <li>Chrome 60 for Android (30%)</li>
+                            <li>Edge 40 (1%)</li>
+                            <li>Firefox 54 for Windows, macOS and Ubuntu (3.75%)</li>
+                            <li>Internet Explorer 11 (3%)</li>
+                            <li>Opera 47 (1%)</li>
+                            <li>Opera Mini 28 for Android (~3%)</li>
+                            <li>Safari 10.1 for macOS (1.3%)</li>
+                            <li>Safari 10.2 (1.5%) and 10.3 (8%) for iOS</li>
+                            <li>Samsung Internet for Android 4 (3.8%)</li>
+                            <li>UC Browser for Android 11.4 (9.1%)</li>
+                        </ul>
+
                     </div>
                 </div>
             </main>
@@ -47,7 +147,7 @@
         <footer class="FOOTER">
             <div class="CONTAINER">
                 <div class="LegalNotices">
-                    <ul class="legalnotices-list" role="contentinfo">
+                    <ul class="legalnotices-list">
                         <li class="legalnotices-item">© 2017 Kieran Potts</li>
                         <li class="legalnotices-item"><a class="legalnotices-link" href="/terms/">Terms</a></li>
                     </ul>
