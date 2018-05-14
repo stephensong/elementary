@@ -646,6 +646,11 @@ ul::after {
     margin-top: 0;
 }
 
+.RichText h2:first-child,
+.RichText h3:first-child {
+    margin-top: 0;
+}
+
 .RichText p, 
 .RichText ul,
 .RichText ol {
