@@ -539,15 +539,15 @@ section::after {
 }
 
 .WRAPPER {
-    /* ... */
+    padding: 4rem 0;
 }
 
 .BANNER {
-    /* ... */
+    margin-bottom: 8rem;
 }
 
 .BANNER_LOGO {
-    /* ... */
+    margin-bottom: 4rem;
 }
 
 .BANNER_NAV {
@@ -559,7 +559,7 @@ section::after {
 }
 
 .FOOTER {
-    /* ... */
+    padding: 4rem 0;
 }
 
 /**
@@ -569,16 +569,40 @@ section::after {
  * @license   MIT
  */
 
-.Logo {
-    /* ... */
+.Logo .logo-logo {
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: -0.1rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
-.Menu {
-    /* ... */
+.Logo .logo-tagline {
+    font-size: 2.4rem;
+    line-height: 1.2;
 }
 
-.RichText {
-    /* ... */
+.Menu .menu-list {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.Menu .menu-list::last-child {
+    margin-bottom: 0;
+}
+
+.RichText h2 {
+    border-bottom: 1px solid #ccc;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.RichText p {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 /**
@@ -587,3 +611,10 @@ section::after {
  * @copyright 2018 Kieran Potts
  * @license   MIT
  */
+
+.h2 {
+    border-bottom: 1px solid #ccc;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
