@@ -10,6 +10,59 @@
         <link href="/" rel="canonical" />
         <link href="/theme/memo/favicons/web.ico?v=20180514161000" rel="icon" />
         <link href="/theme/memo/styles/baseline.css?v=20180514161000" media="all" rel="stylesheet" />
+        <script>
+            ;(function () {
+                'use strict'
+
+                // Load the enhanced experience only in modern browsers that cut the mustard.
+                if (!'addEventListener' in document || !'querySelector' in document) {
+                    return;
+                }
+
+                const config = {
+                    version: '20180514161000',
+                    stylesheets: {
+                        sync: {
+                            all: ['/theme/memo/enhanced.css']
+                        },
+                        async: {}
+                    }
+                }
+
+                var link, media
+                for (media in config.stylesheets.sync) {
+                    config.stylesheets.sync[media].forEach(function (href) {
+                        link = document.createElement('link')
+                        link.rel = 'stylesheet'
+                        link.media = media
+                        link.href = href + '?v=' + v
+                        document.head.appendChild(link)
+                    })
+                }
+
+                var ready = function (fn) {
+                    if (document.body) {
+                        fn()
+                    } else {
+                        setTimeout(function () { ready(fn) }, 50)
+                    }
+                }
+                for (media in config.stylesheets.async) {
+                    config.stylesheets.async[media].forEach(function (href) {
+                        var link = document.createElement('link')
+                        link.rel = 'stylesheet'
+                        link.href = href + '?v=' + v
+                        link.media = 'only x'
+                        link.addEventListener('load', function () {
+                            link.media = media
+                        })
+                        ready(function () {
+                            document.head.appendChild(link)
+                        })
+                    })
+                }
+            }());
+        </script>
     </head>
     <body vocab="http://schema.org/">
         <div class="WRAPPER">
