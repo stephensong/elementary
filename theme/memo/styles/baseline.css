@@ -606,7 +606,7 @@ section::after {
 }
 
 .RichText h2 {
-    border-bottom: 1px solid hsl(0, 0%, 70%);
+    border-bottom: 1px solid hsl(0, 0%, 90%);
     font-size: 2.4rem;
     line-height: 1.2;
     margin-top: 4rem;
@@ -648,19 +648,16 @@ section::after {
 }
 
 .RichText ul li::before {
-    color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 10%);
     content: '–';
-    font-weight: 700;
     margin-top: -2px;
     position: absolute;
     right: 100%;
 }
 
 .RichText code {
-    /*background: hsl(0, 0%, 100%);*/
     color: inherit;
     font-weight: bold;
-    /*padding: 0.1em 0.25em;*/
 }
 
 .RichText pre {
@@ -678,7 +675,7 @@ section::after {
  */
 
 .h2 {
-    border-bottom: 1px solid hsl(0, 0%, 70%);
+    border-bottom: 1px solid hsl(0, 0%, 90%);
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -686,11 +683,11 @@ section::after {
 
 .hyperlinks a {
     color: inherit;
-    outline-offset: 2px;
-    border-bottom: 2px solid hsl(0, 0%, 90%);
+    border-bottom: 1px solid hsl(0, 0%, 10%);
 }
 
 .hyperlinks a:focus, 
 .hyperlinks a:active {
-    outline: 2px solid inherit;
+    outline-offset: 2px;
+    outline: 2px solid hsl(0, 0%, 10%);
 }
