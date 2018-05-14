@@ -547,7 +547,7 @@ section::after {
 }
 
 .BANNER_LOGO {
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
 }
 
 .BANNER_NAV {
@@ -583,20 +583,15 @@ section::after {
 }
 
 .Menu .menu-list {
-    font-size: 1.4rem;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-}
-
-.Menu .menu-list:last-child {
-    margin-bottom: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
 }
 
 .RichText h2 {
     border-bottom: 1px solid #ccc;
     font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-top: 4rem;
 }
 
@@ -604,7 +599,7 @@ section::after {
 .RichText ul {
     font-size: 1.6rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .RichText p:last-child, 
@@ -623,5 +618,5 @@ section::after {
     border-bottom: 1px solid #ccc;
     font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
