@@ -688,8 +688,9 @@ ul::after {
 }
 
 .RichText code {
+    background: hsl(0, 0%, 95%);
     color: inherit;
-    font-weight: bold;
+    padding: 0.1em 0.2em;
 }
 
 .RichText pre {
