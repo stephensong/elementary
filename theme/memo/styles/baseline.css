@@ -535,12 +535,32 @@ section::after {
 .CONTAINER {
     margin: 0 auto;
     max-width: 80rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
-.WRAPPER {}
+.WRAPPER {
+    /* ... */
+}
 
-.BANNER {}
+.BANNER {
+    /* ... */
+}
+
+.BANNER_LOGO {
+    /* ... */
+}
+
+.BANNER_NAV {
+    /* ... */
+}
+
+.MAIN {
+    /* ... */
+}
+
+.FOOTER {
+    /* ... */
+}
 
 /**
  * Components
@@ -548,6 +568,18 @@ section::after {
  * @copyright 2018 Kieran Potts
  * @license   MIT
  */
+
+.Logo {
+    /* ... */
+}
+
+.Menu {
+    /* ... */
+}
+
+.RichText {
+    /* ... */
+}
 
 /**
  * Utilities
