@@ -656,9 +656,10 @@ section::after {
 }
 
 .RichText code {
-    background: hsl(0, 0%, 90%);
+    /*background: hsl(0, 0%, 100%);*/
     color: inherit;
-    padding: 0.1em 0.25em;
+    font-weight: bold;
+    /*padding: 0.1em 0.25em;*/
 }
 
 .RichText pre {
