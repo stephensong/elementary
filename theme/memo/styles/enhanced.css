@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 /**
  * Custom fonts
@@ -80,24 +80,24 @@ var {
  * Global responsive breakpoints
  */
 
- /* 900px x 600px */
+/* 900px x 600px */
 @media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
     html {
-        font-size: 10px + 0.5; 
+        font-size: 10.5px; 
     } 
 }
 
 /* 1200px x 600px */
 @media screen and (min-width: 75rem) and (min-height: 37.5rem) {
     html {
-        font-size: 10px + 1; 
+        font-size: 11px; 
     } 
 }
 
 /* 1500px x 800px */
 @media screen and (min-width: 93.75rem) and (min-height: 50rem) {
     html {
-        font-size: 10px + 1.5; 
+        font-size: 11.5px; 
     } 
 }
 
