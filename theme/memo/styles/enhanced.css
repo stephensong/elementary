@@ -80,18 +80,21 @@ var {
  * Global responsive breakpoints
  */
 
+ /* 900px x 600px */
 @media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
     html {
         font-size: 10px + 0.5; 
     } 
 }
 
+/* 1200px x 600px */
 @media screen and (min-width: 75rem) and (min-height: 37.5rem) {
     html {
         font-size: 10px + 1; 
     } 
 }
 
+/* 1500px x 800px */
 @media screen and (min-width: 93.75rem) and (min-height: 50rem) {
     html {
         font-size: 10px + 1.5; 

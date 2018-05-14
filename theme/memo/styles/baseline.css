@@ -83,7 +83,7 @@ ol ul {
 }
 
 body {
-    font-size: 1.2em; 
+    font-size: 1.6em; 
 }
 
 code,
@@ -583,7 +583,6 @@ ul::after {
 /* Impressum */
 
 .Impressum--list {
-    font-size: 1.2rem;
     line-height: 1.6;
 }
 
@@ -614,7 +613,6 @@ ul::after {
 /* Menu */
 
 .Menu--list {
-    font-size: 1.6rem;
     line-height: 1.6;
 }
 
@@ -640,7 +638,6 @@ ul::after {
 }
 
 .RichText h3 {
-    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.6;
     margin-top: 2rem;
@@ -658,7 +655,6 @@ ul::after {
 .RichText p, 
 .RichText ul,
 .RichText ol {
-    font-size: 1.6rem;
     line-height: 1.6;
     margin-bottom: 2rem;
 }
