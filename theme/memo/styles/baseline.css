@@ -557,6 +557,10 @@ ul::after {
     margin-bottom: 8rem;
 }
 
+.BANNER_LOGO:last-child {
+    margin-bottom: 4rem;
+}
+
 .BANNER_NAV {
     /* Not in use. */
 }
