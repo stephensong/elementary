@@ -136,7 +136,7 @@ li {
 
 hr {
     border: 0;
-    border-top: 2px solid hsl(0, 0%, 90%);
+    border-top: 1px solid hsl(0, 0%, 70%);
     height: 0; 
 }
 
@@ -602,11 +602,11 @@ section::after {
 /* RichText */
 
 .RichText h2, h3 {
-    border-bottom: 2px solid hsl(0, 0%, 90%);
     margin-bottom: 2rem;
 }
 
 .RichText h2 {
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     font-size: 2.4rem;
     line-height: 1.2;
     margin-top: 4rem;
@@ -614,6 +614,7 @@ section::after {
 
 .RichText h3 {
     font-size: 1.6rem;
+    font-weight: 700;
     line-height: 1.6;
     margin-top: 2rem;
 }
@@ -677,7 +678,7 @@ section::after {
  */
 
 .h2 {
-    border-bottom: 2px solid hsl(0, 0%, 90%);
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 2rem;
