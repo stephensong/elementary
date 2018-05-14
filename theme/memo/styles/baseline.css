@@ -569,6 +569,8 @@ section::after {
  * @license   MIT
  */
 
+/* Menu */
+
 .Logo .logo-logo {
     font-size: 3.6rem;
     font-weight: 700;
@@ -582,21 +584,47 @@ section::after {
     line-height: 1.2;
 }
 
+/* Menu */
+
 .Menu .menu-list {
     font-size: 1.6rem;
     line-height: 1.6;
 }
 
-.RichText h2 {
+.Menu .menu-item {
+    /* Not in use */
+}
+
+.Menu .menu-link {
+    /* Not in use */
+}
+
+/* RichText */
+
+.RichText h2, h3 {
     border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+}
+
+.RichText h2 {
     font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 2rem;
     margin-top: 4rem;
 }
 
+.RichText h3 {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+}
+
+.RichText h2 + h3 {
+    margin-top: 0;
+}
+
 .RichText p, 
-.RichText ul {
+.RichText ul,
+.RichText ol {
     font-size: 1.6rem;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -605,6 +633,39 @@ section::after {
 .RichText p:last-child, 
 .RichText ul:last-child {
     margin-bottom: 0;
+}
+
+.RichText ul ul, 
+.RichText ol ol {
+    padding-left: 2em;
+}
+
+.RichText ul li {
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+    position: relative;
+}
+
+.RichText ul li::before {
+    color: hsl(48, 100%, 45%);
+    content: '■';
+    font-weight: 700;
+    margin-top: -2px;
+    position: absolute;
+    right: 100%;
+}
+
+.RichText code {
+    background: hsl(0, 0%, 90%);
+    color: inherit;
+    padding: 0 0.5em;
+}
+
+.RichText pre {
+    background: hsl(0, 0%, 90%);
+    color: inherit;
+    margin: 2rem 0;
+    padding: 1rem;
 }
 
 /**
@@ -619,4 +680,43 @@ section::after {
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 2rem;
+}
+
+.hyperlinks a {
+    color: inherit;
+    outline-offset: 2px;
+    text-decoration: underline;
+}
+
+.hyperlinks a:focus, 
+.hyperlinks a:active {
+    outline: 2px solid hsl(0, 0%, 80%);
+}
+
+.hyperlinks a:hover {
+    color: inherit;
+}
+
+.hyperlinks a:focus {
+    color: inherit;
+}
+
+.hyperlinks a:active {
+    color: inherit;
+}
+
+.hyperlinks a:visited {
+    color: inherit;
+}
+
+.hyperlinks a:visited:hover {
+    color: inherit;
+}
+
+.hyperlinks a:visited:focus {
+    color: inherit;
+}
+
+.hyperlinks a:visited:active {
+    color: inherit;
 }
