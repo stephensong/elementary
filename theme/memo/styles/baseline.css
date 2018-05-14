@@ -91,7 +91,7 @@ kbd,
 pre,
 samp,
 var {
-    font-size: 1.1rem; 
+    font-size: 100%; 
 }
 
 body {
@@ -136,7 +136,7 @@ li {
 
 hr {
     border: 0;
-    border-top: 1px solid hsl(0, 0%, 10%);
+    border-top: 1px solid hsl(0, 0%, 70%);
     height: 0; 
 }
 
@@ -237,14 +237,14 @@ address {
 }
 
 ::-moz-selection {
-    background: hsl(50, 100%, 50%);
-    color: hsl(0, 0%, 10%);
+    background: hsl(50, 100%, 70%);
+    color: inherit;
     text-shadow: none; 
 }
 
 ::selection {
-    background: hsl(50, 100%, 50%);
-    color: hsl(0, 0%, 10%);
+    background: hsl(50, 100%, 70%);
+    color: inherit;
     text-shadow: none; 
 }
 
@@ -521,7 +521,7 @@ section::after {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(0, 0%, 10%); 
+    background: hsl(0, 0%, 70%); 
 }
 
 
@@ -602,7 +602,7 @@ section::after {
 /* RichText */
 
 .RichText h2, h3 {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     margin-bottom: 2rem;
 }
 
@@ -647,7 +647,7 @@ section::after {
 }
 
 .RichText ul li::before {
-    color: hsl(48, 100%, 45%);
+    color: hsl(0, 0%, 70%);
     content: '■';
     font-weight: 700;
     margin-top: -2px;
@@ -676,7 +676,7 @@ section::after {
  */
 
 .h2 {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -690,7 +690,7 @@ section::after {
 
 .hyperlinks a:focus, 
 .hyperlinks a:active {
-    outline: 2px solid hsl(0, 0%, 80%);
+    outline: 2px solid hsl(0, 0%, 70%);
 }
 
 .hyperlinks a:hover {
