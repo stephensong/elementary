@@ -543,7 +543,7 @@ section::after {
 }
 
 .BANNER {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 .BANNER_LOGO {
@@ -597,12 +597,19 @@ section::after {
     font-size: 2.4rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+    margin-top: 4rem;
 }
 
-.RichText p {
-    font-size: 1.4rem;
-    line-height: 1.2;
+.RichText p, 
+.RichText ul {
+    font-size: 1.6rem;
+    line-height: 1.6;
     margin-bottom: 1rem;
+}
+
+.RichText p:last-child, 
+.RichText ul:last-child {
+    margin-bottom: 0;
 }
 
 /**
