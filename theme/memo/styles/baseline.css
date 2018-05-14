@@ -511,6 +511,13 @@ section::after {
     display: table; 
 }
 
+ol::after,
+ul::after {
+    clear: both;
+    content: '';
+    display: table; 
+}
+
 ::-webkit-scrollbar {
     height: 14px;
     width:  14px; 
@@ -573,15 +580,16 @@ section::after {
 
 .Impressum--list {
     font-size: 1.2rem;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .Impressum--item {
-    /* Not in use. */
+    float: left;
+    margin-right: 2em;
 }
 
-.Impressum--link {
-    /* Not in use. */
+.Impressum--item:last-child {
+    margin-right: 0;
 }
 
 /* Logo */
