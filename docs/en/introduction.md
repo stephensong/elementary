@@ -3,7 +3,7 @@
 
 Reset style sheets iron out inconsistencies in the default presentation given to HTML elements by web browsers.
 
-Elementary CSS goes further. It overrides the browser's default style sheet to provide a leaner, more minimalist baseline from which to build modern web application interfaces.
+Elementary CSS goes further. It overrides the browser's default style sheet to provide a leaner, more minimalist baseline from which to build modern web application interfaces. (Elementary CSS does not include any class definitions. It is concerned exclusively with the default presentation of naked HTML elements.)
 
 The effect is that by default everything in an HTML document looks very samey. It is intentionally generic. For example, all text — from headings to small print — is rendered at the same size, and table cells are stripped of padding and borders.
 
