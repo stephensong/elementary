@@ -1,5 +1,4 @@
 # [![Elementary CSS](https://cdn.rawgit.com/kieranpotts/elementary/8bb0723a9933d5ec7e4132f29f7b25231ee082ae/dist/elementarycss.255x40.svg)](https://www.elementarycss.com/)
-**A powerful reset style sheet.**
 
 [![Latest](https://img.shields.io/github/release/kieranpotts/elementary.svg?style=for-the-badge&label=Latest&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://github.com/kieranpotts/elementary/releases)
 [![Issues](https://img.shields.io/github/issues/kieranpotts/elementary.svg?style=for-the-badge&label=Issues&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://github.com/kieranpotts/elementary/issues)
