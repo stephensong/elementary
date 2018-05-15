@@ -44,9 +44,8 @@
                             <ul class="Menu--list hyperlinks">
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-introduction">Introduction</a></li>
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-installation">Installation</a></li>
-                                <li class="Menu--item"><a class="Menu--link" href="/#toc-browsers">Browsers</a></li>
+                                <li class="Menu--item"><a class="Menu--link" href="/#toc-compatibility">Compatibility</a></li>
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-features">Features</a></li>
-                                <li class="Menu--item"><a class="Menu--link" href="/#toc-notes">Notes</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -59,15 +58,15 @@
                         <h2 id="toc-introduction">Introduction</h2>
 
                         <p>Reset style sheets iron out inconsistencies in the default presentation given to HTML elements by web browsers.</p>
-                        
-                        <p>Elementary CSS goes further. It overrides the browser's default style sheet to provide a leaner, more minimalist baseline from which to build modern web application interfaces.</p>
+
+                        <p>Elementary CSS goes further. It overrides the browser's default style sheet to provide a leaner, more minimalist baseline from which to build modern web application interfaces. (Elementary CSS does not include any class definitions. It is concerned exclusively with the default presentation of naked HTML elements.)</p>
 
                         <p>The effect is that by default everything in an HTML document looks very samey. It is intentionally generic. For example, all text — from headings to small print — is rendered at the same size, and table cells are stripped of padding and borders.</p>
 
                         <p>It means that all aspects of an application's design is implemented via that application's own classes.</p>
 
                         <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. The source files are extensively commented to help you. You should change the default fonts and colors, and create your own set of base styles that are appropriate for your application's GUI.</p>
-                        
+
                         <p>An aggressive reset like this is a great starting point for enforcing your own opinions on your CSS architecture.</p>
 
                         <h2 id="toc-installation">Installation</h2>
@@ -79,7 +78,9 @@
                             <li>You will need a <a href="https://sass-lang.com/" rel="external">Sass tool</a> to transpile the source files to CSS. Alternatively, you can use the ready-made <code>./build/elementary.css</code> or the minified version <code>./build/elementary.min.css</code>.</li>
                         </ol>
 
-                        <h2 id="toc-browsers">Browsers</h2>
+                        <h2 id="toc-compatibility">Compatibility</h2>
+
+                        <h3>Web Browsers</h3>
 
                         <p>Elementary CSS supports a wide range of browsers for both desktop and mobile. It is comprehensively tested in the following browsers. (The figures in brackets are <a href="http://gs.statcounter.com/" rel="external">global market share as of July 2017</a>.)</p>
 
@@ -97,6 +98,16 @@
                             <li>Samsung Internet for Android 4 (3.8%)</li>
                             <li>UC Browser for Android 11.4 (9.1%)</li>
                         </ul>
+
+                        <p>Once a browser release dips below 1% global market share in the browser's category, the minimum supported version is bumped. Note that category share is higher than total market share. For example, Microsoft Edge has about a 1% total market share, but more than 3% in the desktop category and higher still among Windows users.</p>
+
+                        <p>The list of supported browsers is reviewed annually or with major releases, whichever comes sooner.</p>
+
+                        <h3>Web Standards</h3>
+
+                        <p>Elementary CSS is compatible with modern web standards. No effort is made to deal with HTML elements that have been deprecated from the HTML5 specification, things like <code>&lt;acronym&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+                        <p>New HTML elements that have been recently added to the specification but which are not yet widely supported, things like <code>&lt;menu&gt;</code>, are also omitted.</p>
 
                         <h2 id="toc-features">Features</h2>
 
@@ -167,13 +178,6 @@
                             <li>The vertical scrollbar is kept visible, even on pages with no vertical overflow.</li>
                             <li>Custom scrollbars are implemented in WebKit browsers.</li>
                             <li>There are polyfills for IE's proprietary <code>unselectable</code> attribute, for the <code>hidden</code> attribute, the <code>&lt;main&gt;</code> element, and a partial polyfill for the <code>&lt;template&gt;</code> element.</li>
-                        </ul>
-
-                        <h2 id="toc-notes">Notes</h2>
-
-                        <ul>
-                            <li>Deprecated elements such as <code>&lt;acronym&gt;</code>, <code>&lt;center&gt;</code>, and <code>&lt;big&gt;</code> are not handled by this reset style sheet.</li>
-                            <li>This style sheet contains no class definitions. It is concerned exclusively with the default presentation of naked HTML elements.</li>
                         </ul>
 
                     </div>
