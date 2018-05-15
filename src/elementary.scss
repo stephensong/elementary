@@ -299,7 +299,7 @@ abbr,
 dfn {
     text-decoration: none;
 
-    [title] {
+    &[title] {
         cursor: help; } }
 
 dfn {
@@ -312,8 +312,8 @@ blockquote,
 q {
     quotes: none;
 
-    ::before,
-    ::after {
+    &::before,
+    &::after {
         content: ''; } }
 
 // Remove the default italics of <cite>, and remove the underline from <ins> and
