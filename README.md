@@ -8,7 +8,7 @@ The principal purpose of a reset style sheet is to iron out inconsistencies in t
 
 Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. You should change the fonts and colors and create your own set of base styles that are appropriate for your application's GUI.
 
-Download the contents of the ``./src/`` directory and incorporate them into your project. You will need a Sass tool to compile ``./src/elementary.scss`` to CSS. Alternatively, you can use the pre-compiled ``./build/elementary.css`` or the minified version ``./build/elementary.min.css``.
+Download the contents of the ``./src/`` directory and incorporate them into your project. You will need a Sass tool to compile ``./src/elementary.scss`` to CSS. Alternatively, you can use the pre-compiled ``./dist/elementary.css`` or the minified version ``./dist/elementary.min.css``.
 
 
 ## Features
