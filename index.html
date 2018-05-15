@@ -62,7 +62,11 @@
                         
                         <p>Elementary CSS goes further. It overrides the browser's default style sheet to provide a leaner, more minimalist baseline from which to build modern web application interfaces.</p>
 
-                        <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. You should change the default fonts and colors, and create your own set of base styles that are appropriate for your application's GUI.</p>
+                        <p>The effect is that by default everything in an HTML document looks very samey. It is intentionally generic. For example, all text — from headings to small print — is rendered at the same size, and table cells are stripped of padding and borders.</p>
+
+                        <p>It means that all aspects of an application's design is implemented via that application's own classes.</p>
+
+                        <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. The source files are extensively commented to help you. You should change the default fonts and colors, and create your own set of base styles that are appropriate for your application's GUI. An aggressive reset like this is a great starting point for enforcing your own opinions on your CSS architecture.</p>
 
                         <h2 id="toc-installation">Installation</h2>
 
@@ -75,7 +79,7 @@
 
                         <h2 id="toc-browsers">Browsers</h2>
 
-                        <p>Elementary CSS supports the following browsers. The figures in brackets are <a href="http://gs.statcounter.com/" rel="external">global market share as of July 2017</a>.</p>
+                        <p>Elementary CSS supports a wide range of browsers for both desktop and mobile. It is comprehensively tested in the following browsers. (The figures in brackets are <a href="http://gs.statcounter.com/" rel="external">global market share as of July 2017</a>.)</p>
 
                         <ul>
                             <li>Android 4.4 (1%)</li>
@@ -94,15 +98,15 @@
 
                         <h2 id="toc-features">Features</h2>
 
-                        <p>As well as fixing common cross-browser inconsistencies, Elementary CSS implements the following changes to the browser's default styles.</p>
+                        <p>Elementary CSS fixes bugs and cross-browser inconsistencies in the default presentation of HTML elements. In addition, Elementary CSS implements the following extensions to the browser's default style sheet.</p>
 
                         <h3>Typography</h3>
 
                         <ul>
                             <li>The default font is set to Roboto.</li>
                             <li>Inconsolata, a monospace font, is adopted for <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, and <code>&lt;var&gt;</code>.</li>
-                            <li>The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (<code>rem</code>) units. For example, 1.2rem is rendered at 12px (1.2 x 10 = 12) on mobile devices.</li>
-                            <li>On larger screens, the root font size is bumped, meaning that anything sized in rem units will scale proportionally to the rendering window.</li>
+                            <li>The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (<code>rem</code>) units.</li>
+                            <li>The default font size is 1.2rem (1.2 x 10 = 12px). This is the size that text is rendered on mobile devices. On larger screens, the root font size is bumped up, meaning that anything sized in rem units will automatically scale proportionally to the size of the rendering window. This is a simple implementation of basic mobile-first responsiveness using minimal wiring.</li>
                             <li>The default font color is changed to <code>hsl(0, 0%, 10%)</code>, which is equivalent to the hex <code>#1A1A1A</code>.</li>
                             <li>Properties such as <code>color</code>, <code>font-family</code> and <code>font-weight</code> are made to be inherited by all elements, including <code>&lt;textarea&gt;</code> and <code>&lt;legend&gt;</code>, which traditionally have not inherited these properties.</li>
                             <li>The <code>line-height</code> of all block-level text is set to 1x its <code>font-size</code>.</li>
@@ -149,6 +153,7 @@
 
                         <ul>
                             <li>The browser's default underlines and outlines are removed from hyperlinks, and focus identifiers are removed from everything. The reason for this change is that CSS authors commonly implement custom solutions for these accessibility requirements.</li>
+                            <li>The <code>&lt;abbr&gt;</code> and <code>&lt;dfn&gt;</code> elements are differentiated from normal text only if they have a <code>title</code> attribute.</li>
                             <li>All interactive elements when hovered over will show the pointer cursor, except when disabled.</li>
                             <li>Where the <code>accesskey</code> attribute is used, its value is rendered in the element's <code>::after</code> pseudo element.</li>
                         </ul>
