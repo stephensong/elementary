@@ -22,7 +22,8 @@
   "engines": {
     "node": ">=6.11.0"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "autoprefixer": "^7.1.1",
     "chokidar-cli": "^1.2.0",
     "cpx": "^1.5.0",
@@ -31,12 +32,11 @@
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.0.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "css:compile": "node-sass-chokidar --source-map true src/ --output build/",
-    "css:autoprefix": "postcss build/elementary.css --use autoprefixer --output build/elementary.css",
-    "css:minify": "postcss build/elementary.css --no-map --use cssnano --output build/elementary.min.css",
-    "fonts:copy": "cpx src/fonts/**/* build/fonts --update",
+    "css:compile": "node-sass-chokidar --source-map true src/ --output dist/",
+    "css:autoprefix": "postcss dist/elementary.css --use autoprefixer --output dist/elementary.css",
+    "css:minify": "postcss dist/elementary.css --no-map --use cssnano --output dist/elementary.min.css",
+    "fonts:copy": "cpx src/fonts/**/* dist/fonts --update",
     "build": "run-s css:* fonts:*",
     "watch": "chokidar src/elementary.scss --command \"run-s css:*\" --throttle 10000",
     "dev": "run-s build watch"
