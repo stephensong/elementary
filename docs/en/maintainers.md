@@ -54,7 +54,7 @@ git branch -d dev/[issue]-[description]
 
 When the HEAD commit in the ``test`` branch is known to be stable and deployable, a new version of the software can be released.
 
-First, do a reverse merge, merging ``prod`` backwards into ``test``.
+First, do a reverse merge, merging ``prod`` backwards into ``test``. The purpose here is to capture any recent hotfixes that may have gone straight out to production.
 
 ```
 git checkout test
@@ -105,3 +105,5 @@ git push --tags origin prod
 ```
 
 Finally, from Github's index page for the upstream repository, go to "Releases" and click "Draft a new release". Select the new version tag on the ``prod`` branch. The release title should match the version number, e.g. "v1.2.34". Optionally, write a short summary of the changes included in the release, and click "Publish release".
+
+After a release, switch the ``gh-pages`` branch and review the online documentation against recent edits to the contents of the ``./docs/`` folder.

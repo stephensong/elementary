@@ -1,8 +1,9 @@
 # Elementary CSS Documentation
 
-- [Features](features.md)
+- [Introduction](introduction.md)
 - [Installation](installation.md)
-- [Usage](usage.md)
+- [Compatibility](compatibility.md)
+- [Features](features.md)
 
 ## Contributing
 
