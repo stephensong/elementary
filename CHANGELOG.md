@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [v2.0.0] - Unreleased
+## [v2.0.0] - 2018-05-15
 - Fix used of ampersand in nested selectors for abbreviations, definitions, and quotes.
 - Include standard syntax for ``appearance`` and ``text-size-adjust`` properties where vendor-prefixed versions used.
 - Rename ``build`` directory as ``dist``.
