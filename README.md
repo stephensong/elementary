@@ -4,7 +4,6 @@
 [![Latest](https://img.shields.io/github/release/kieranpotts/elementary.svg?style=for-the-badge&label=Latest&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://github.com/kieranpotts/elementary/releases)
 [![Issues](https://img.shields.io/github/issues/kieranpotts/elementary.svg?style=for-the-badge&label=Issues&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://github.com/kieranpotts/elementary/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/kieranpotts/elementary.svg?style=for-the-badge&label=Pull%20Requests&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://github.com/kieranpotts/elementary/pulls)
-[![Travis](https://img.shields.io/travis/kieranpotts/elementary.svg?style=for-the-badge&label=Build&colorA=777777&colorB=bbbbbb&maxAge=3600)](https://travis-ci.org/kieranpotts/elementary)
 
 Elementary CSS is an aggressive reset style sheet.
 
