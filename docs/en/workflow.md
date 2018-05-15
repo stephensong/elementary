@@ -86,7 +86,7 @@ As a general rule, each contribution — identified by a unique pull request —
    git commit -a
    ```
 
-   Be sure to add or update the relevant test cases, which are in the ``./tests/`` directory, and documentation, which is in the ``./docs/`` directory. Documentation is formatted using GitHub-Flavoured Markdown.
+   Be sure to add or update the relevant test cases, which are in the ``./demo/`` directory, and documentation, which is in the ``./docs/`` directory. Documentation is formatted using GitHub-Flavoured Markdown.
 
 6. ## Synchronize
 

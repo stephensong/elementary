@@ -18,7 +18,7 @@ To fix an error, the software maintainers must be able to reproduce it. This req
 
 - Detailed step-by-step instructions to reproduce the error.
 - A live example of the problem, e.g. a [Codepen](http://codepen.io/).
-- A reduced test case, like the ones in our ``./tests/`` directory.
+- A reduced test case, like the ones in our ``./demo/`` directory.
 
 Please provide details of the browser name, version number, and operating system in which you experienced the error. Describe the outcome your expected, and what's different about the actual outcome.
 
@@ -119,7 +119,7 @@ Undertake your work in your issue branch.
 
 If you are making substantive changes over a long period, you should make regular commits, organizing your changes in logical iterations. Long-lived feature branches should be kept synchronized with the project mainline, and you may like to backup your work by pushing regularly to your origin repository on GitHub. See below for instructions.
 
-Be sure to add or update the relevant reduced test cases, which are in the ``./tests`` directory. The reduced test cases are plain HTML documents that demonstrate the effect of the Elementary CSS style sheet on isolated HTML elements.
+Be sure to add or update the relevant reduced test cases, which are in the ``./demo/`` directory. The reduced test cases are plain HTML documents that demonstrate the effect of the Elementary CSS style sheet on isolated HTML elements.
 
 Make your changes, and stage and commit them. Using the ``-a`` flag on commit will allow you to submit a commit subject plus a more detailed body message, if you wish.
 
