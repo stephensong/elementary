@@ -227,7 +227,8 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%; }
+        -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%; }
 
 // The default font color is applied to the document body and allowed to cascade
 // to all elements within the document - even <legend> and form controls that do
@@ -554,14 +555,17 @@ input[type="radio"] {
 // to search boxes; this can be removed in WebKit browsers.
 
 button {
-    -webkit-appearance: button; }
+    -webkit-appearance: button;
+            appearance: button; }
 
 input[type="search"] {
-    -webkit-appearance: textfield; }
+    -webkit-appearance: textfield;
+            appearance: textfield; }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none; }
+    -webkit-appearance: none;
+            appearance: none; }
 
 // Firefox adds, for accessibility purposes, a small dotted border around button
 // and input controls that are in focus. This causes unwanted padding that makes
