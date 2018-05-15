@@ -15,7 +15,7 @@ As a general rule, each contribution — identified by a unique pull request —
    Download a copy of your origin repository.
 
    ```
-   git clone https://github.com/[your-github-username]/[project].git
+   git clone https://github.com/[your-github-username]/elementary.git
    ```
 
    The copy of the project that now exists on your computer is your "local" repository. This is where you'll do your work. 
@@ -23,7 +23,7 @@ As a general rule, each contribution — identified by a unique pull request —
    When you ran the ``git clone`` command, Git would have automatically added a remote named "origin". You should add another remote that references the "upstream" repository. You'll need this later. From the root directory of your newly cloned local repository, run the following command in your terminal.
 
    ```
-   git remote add upstream https://github.com/[upstream-user]/[project].git
+   git remote add upstream https://github.com/kieranpotts/elementary.git
    ```
 
 3. ## Checkout
@@ -32,12 +32,6 @@ As a general rule, each contribution — identified by a unique pull request —
 
    ```
    git checkout test
-   ```
-
-   If you want to make changes to a legacy release of the software, checkout the relevant versioned ``test`` branch. Example:
-
-   ```
-   git checkout test/v1
    ```
 
 4. ## Branch
@@ -112,12 +106,6 @@ As a general rule, each contribution — identified by a unique pull request —
    git pull --rebase upstream test
    ```
 
-   Remember, if you're introducing changes to a legacy release, be sure to rebase off the appropriate versioned ``test`` branch.
-
-   ```
-   git pull --rebase upstream test/v1
-   ```
-
    If you get conflicts during the rebasing process, resolve them, and then continue the rebase.
 
    ```
@@ -148,18 +136,18 @@ As a general rule, each contribution — identified by a unique pull request —
 
    When your work is done, and with everything pushed to your origin repository, it is time to have your changes merged into the project mainline.
 
-   Go to the Pull Requests section of the upstream repository: https://github.com/[upstream-user]/[project]/pulls.
+   Go to the Pull Requests section of the upstream repository: https://github.com/kieranpotts/elementary/pulls.
    
    Click the "New pull request" button. Click "Compare across forks".
    
    Choose the following for merge:
 
-   - Base repository: ``[upstream-user]/[project]``
+   - Base repository: ``kieranpotts/elementary``
    - Base branch: ``test``
-   - Head repository: ``[your-github-username]/[project]``
+   - Head repository: ``[your-github-username]/elementary``
    - Head branch: ``dev/[issue]-[description]``
 
-   Pull requests should be made to the ``test`` branch of the upstream repository. Remember to choose the appropriate versioned ``test`` branch, such as ``test/v1``, if you're making changes to a legacy version of the software.
+   Pull requests should be made to the ``test`` branch of the upstream repository.
 
    Click the "Create pull request" button.
 

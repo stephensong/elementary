@@ -26,7 +26,7 @@ git checkout -b dev/[issue]-[description] test
 Pull in the work to be reviewed from the relevant remote repository. This may be a fork of the upstream repository — rather than "origin" — if the PR is from an external contributor.
 
 ```
-git pull git://github.com/[user]/[project].git dev/[issue]-[description]
+git pull git://github.com/[user]/elementary.git dev/[issue]-[description]
 ```
 
 Test the changes and, if necessary, introduce new commits to get everything working as expected. Review associated tests and documentation.
@@ -63,10 +63,13 @@ git merge prod
 
 Resolve any conflicts in the ``test`` branch. Run automated tests and work through any pre-release test scripts to confirm that the HEAD commit in your local ``test`` branch is stable.
 
-Releases are tagged in the ``test`` branch before ``test`` is merged into ``prod``. We use [Semver](http://semver.org/), the gold standard in software version numbering. Bump the version number in the following files:
+Releases are tagged in the ``test`` branch before ``test`` is merged into ``prod``. We use [Semver](http://semver.org/), the gold standard in software version numbering. Note that _any_ change to _any_ CSS selector or rule will break backwards compatibility. Therefore, all CSS changes will increment the _major_ version number. Comments and formatting changes will bump the patch number. There is no type of change that can be made to CSS that is considered to be minor.
+
+Bump the version number in the following files:
 
 - ``./CHANGELOG.md``
 - ``./package.json``
+- ``./src/elementary.scss`` and equivalent built files in ``./dist/``
 
 Update the CHANGELOG with a list of functional changes and bug fixes. Use the commit and PR history to gather this information.
 

@@ -36,7 +36,7 @@ To fix a bug, the project maintainers must be able to reproduce it. A good bug r
 - Detailed step-by-step instructions to reproduce the error
 - A live example of the problem, e.g. a [Codepen](http://codepen.io/)
 - A screenshot, if reporting a visual regression
-- A failing test case
+- A failing test case or demo page
 
 Describe the outcome that you expected, and what's different about the actual outcome. If relevant, provide details of the browser name, version number, and operating system in which you experienced the error. If you think you can identify the source of the bug, such as a specific line or block of code, please include this information in your bug report, too.
 
@@ -49,4 +49,4 @@ Please raise an issue before making a pull request. The project maintainers will
 If the project maintainers accept the bug or feature, and if they assign you to work on it, you will need to fork the source code repository and undertake your work in the fork. When you are done, you will submit a pull request to have your changes merged into the main project. Please refer to the [Source Control Workflow](workflow.md) documentation for detailed instructions.
 
 
-[1]: https://github.com/[user]/[project]/issues
+[1]: https://github.com/kieranpotts/elementary/issues

@@ -1,18 +1,8 @@
-# [Project Title] Documentation
-
-## Installation
-
-- [Requirements](requirements.md)
-- [Installation](installation.md)
-- [Configuration](configuration.md)
-- [Updating](updating.md)
-- [Migrations](migrations.md)
-
-## Usage
+# Elementary CSS Documentation
 
 - [Features](features.md)
-- [Getting Started](getting-started.md)
-- [Plugins](plugins.md)
+- [Installation](installation.md)
+- [Usage](usage.md)
 
 ## Contributing
 
