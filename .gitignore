@@ -19,12 +19,9 @@ _*
 .todo
 .vagrant
 
+package-lock.json # Development dependencies only
 Thumbs.db
 
-/api/
-/build/
-/coverage/
-/dist/
 /nbproject/
 /node_modules/
 /tmp/
