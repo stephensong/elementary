@@ -46,6 +46,7 @@
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-installation">Installation</a></li>
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-browsers">Browsers</a></li>
                                 <li class="Menu--item"><a class="Menu--link" href="/#toc-features">Features</a></li>
+                                <li class="Menu--item"><a class="Menu--link" href="/#toc-notes">Notes</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -69,7 +70,7 @@
                             <li>Download or clone the <a href="https://github.com/kieranpotts/elementary" rel="external">source code repository</a>.</li>
                             <li>Extracts the contents of the <code>./src/</code> directory.</li>
                             <li>Incorporate the source files into your own project.</li>
-                            <li>You will need a <a href="https://sass-lang.com/" rel="external">Sass tool</a> to transpile the source files to CSS. Alternatively, you can use the pre-compiled <code>./build/elementary.css</code> or the minified version <code>./build/elementary.min.css</code>.</li>
+                            <li>You will need a <a href="https://sass-lang.com/" rel="external">Sass tool</a> to transpile the source files to CSS. Alternatively, you can use the ready-made <code>./build/elementary.css</code> or the minified version <code>./build/elementary.min.css</code>.</li>
                         </ol>
 
                         <h2 id="toc-browsers">Browsers</h2>
@@ -147,7 +148,7 @@
                         <h3>Accessibility</h3>
 
                         <ul>
-                            <li>The browser's default underlines and outlines are removed from hyperlinks, and focus identifiers are removed from everything, since CSS authors commonly implement custom solutions for these accessibility requirements.</li>
+                            <li>The browser's default underlines and outlines are removed from hyperlinks, and focus identifiers are removed from everything. The reason for this change is that CSS authors commonly implement custom solutions for these accessibility requirements.</li>
                             <li>All interactive elements when hovered over will show the pointer cursor, except when disabled.</li>
                             <li>Where the <code>accesskey</code> attribute is used, its value is rendered in the element's <code>::after</code> pseudo element.</li>
                         </ul>
@@ -159,6 +160,13 @@
                             <li>The vertical scrollbar is kept visible, even on pages with no vertical overflow.</li>
                             <li>Custom scrollbars are implemented in WebKit browsers.</li>
                             <li>There are polyfills for IE's proprietary <code>unselectable</code> attribute, for the <code>hidden</code> attribute, the <code>&lt;main&gt;</code> element, and a partial polyfill for the <code>&lt;template&gt;</code> element.</li>
+                        </ul>
+
+                        <h2 id="toc-notes">Notes</h2>
+
+                        <ul>
+                            <li>Deprecated elements such as <code>&lt;acronym&gt;</code>, <code>&lt;center&gt;</code>, and <code>&lt;big&gt;</code> are not handled by this reset style sheet.</li>
+                            <li>This style sheet contains no class definitions. It is concerned exclusively with the adjusting of the default presentation of naked HTML elements.</li>
                         </ul>
 
                     </div>
