@@ -1,12 +1,14 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
+## [v2.0.0] - Unreleased
+- Fix used of ampersand in nested selectors for abbreviations, definitions, and quotes.
+- Include standard syntax for ``appearance`` and ``text-size-adjust`` properties where vendor-prefixed versions used.
+- Rename ``build`` directory as ``dist``.
+- Include ``dist`` directory in version control.
+- Rename ``tests`` directory as ``demo``. Use minified CSS for demos.
 
 ## [v1.0.0] - 2017-08-20
-### Added
 - Removed margins and padding globally.
 - Minimum page width set to 320px.
 - Always show vertical scrollbar.
