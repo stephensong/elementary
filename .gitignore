@@ -21,10 +21,6 @@ _*
 
 Thumbs.db
 
-/api/
-/build/
-/coverage/
-/dist/
 /nbproject/
 /node_modules/
 /tmp/

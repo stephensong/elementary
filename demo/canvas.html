@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <title>&lt;canvas&gt;</title>
+        <meta content="noindex, nofollow" name="robots" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link href="../dist/elementary.min.css" rel="stylesheet" media="all" />
+    </head>
+    <body>
+        <canvas height="400" id="canvas" width="600">Sorry, your browser is unable to display this media.</canvas>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            // Create a linear gradient:
+            var gradient = context.createLinearGradient(0, 0, 600, 0);
+            gradient.addColorStop(0, 'blue');
+            gradient.addColorStop(1, 'yellow');
+
+            // Fill the canvas with the gradient:
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 600, 400);
+
+            // Add some text:
+            context.font = '30px Arial';
+            context.fillStyle = '#FFF';
+            context.fillText('Hello World', 10, 40);
+        </script>
+    </body>
+</html>
