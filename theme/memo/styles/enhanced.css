@@ -102,6 +102,23 @@ var {
 }
 
 /**
+ * Layout
+ */
+
+/* 900px x 600px */
+@media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
+
+    .WRAPPER {
+        padding: 4rem 0;
+    }
+
+    .BANNER_LOGO {
+        margin-bottom: 12rem;
+    }
+
+}
+
+/**
  * Components
  */
 
@@ -109,4 +126,13 @@ var {
 
 .RichText ul li::before {
     margin-top: 0;
+}
+
+/* 900px x 600px */
+@media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
+
+    .RichText h2 {
+        margin-top: 8rem;
+    }
+    
 }

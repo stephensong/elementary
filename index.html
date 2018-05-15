@@ -66,13 +66,15 @@
 
                         <p>It means that all aspects of an application's design is implemented via that application's own classes.</p>
 
-                        <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. The source files are extensively commented to help you. You should change the default fonts and colors, and create your own set of base styles that are appropriate for your application's GUI. An aggressive reset like this is a great starting point for enforcing your own opinions on your CSS architecture.</p>
+                        <p>Elementary CSS is not intended to be used as is. You are encouraged to fork and modify Elementary CSS for your own needs. The source files are extensively commented to help you. You should change the default fonts and colors, and create your own set of base styles that are appropriate for your application's GUI.</p>
+                        
+                        <p>An aggressive reset like this is a great starting point for enforcing your own opinions on your CSS architecture.</p>
 
                         <h2 id="toc-installation">Installation</h2>
 
                         <ol>
                             <li>Download or clone the <a href="https://github.com/kieranpotts/elementary" rel="external">source code repository</a>.</li>
-                            <li>Extracts the contents of the <code>./src/</code> directory.</li>
+                            <li>Extract the contents of the <code>./src/</code> directory.</li>
                             <li>Incorporate the source files into your own project.</li>
                             <li>You will need a <a href="https://sass-lang.com/" rel="external">Sass tool</a> to transpile the source files to CSS. Alternatively, you can use the ready-made <code>./build/elementary.css</code> or the minified version <code>./build/elementary.min.css</code>.</li>
                         </ol>
@@ -106,7 +108,7 @@
                             <li>The default font is set to Roboto.</li>
                             <li>Inconsolata, a monospace font, is adopted for <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, and <code>&lt;var&gt;</code>.</li>
                             <li>The root font size is changed from 16px to 10px, making it easier to specify relative sizes using root em (<code>rem</code>) units.</li>
-                            <li>The default font size is 1.2rem (1.2 x 10 = 12px). This is the size that text is rendered on mobile devices. On larger screens, the root font size is bumped up, meaning that anything sized in rem units will automatically scale proportionally to the size of the rendering window. This is a simple implementation of basic mobile-first responsiveness using minimal wiring.</li>
+                            <li>The default font size is 1.2rem (1.2 x 10 = 12px). This is the size that text is rendered on mobile devices. On larger screens, the root font size is bumped up, meaning that anything sized in rem units will automatically scale proportionally to the size of the rendering window. This is a simple implementation of basic mobile-first responsiveness.</li>
                             <li>The default font color is changed to <code>hsl(0, 0%, 10%)</code>, which is equivalent to the hex <code>#1A1A1A</code>.</li>
                             <li>Properties such as <code>color</code>, <code>font-family</code> and <code>font-weight</code> are made to be inherited by all elements, including <code>&lt;textarea&gt;</code> and <code>&lt;legend&gt;</code>, which traditionally have not inherited these properties.</li>
                             <li>The <code>line-height</code> of all block-level text is set to 1x its <code>font-size</code>.</li>
@@ -115,14 +117,14 @@
                             <li>Many other default text decorations are removed, such as underlines from <code>&lt;u&gt;</code> and <code>&lt;del&gt;</code>, the background color from <code>&lt;mark&gt;</code>, and generated quotes from <code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code>.</li>
                             <li>The <code>&lt;small&gt;</code> element now adopts the <code>font-size</code> of its parent, turning this into a purely semantic tag.</li>
                             <li>A consistent default presentation for the horizontal rule element (<code>&lt;hr&gt;</code>) is applied across all browsers.</li>
-                            <li>A better methodology to render superscript (<code>&lt;sup&gt;</code>) and subscript (<code>&lt;sub&gt;</code>) text is adopted, which does not affect line height.</li>
+                            <li>A better methodology to render superscript (<code>&lt;sup&gt;</code>) and subscript (<code>&lt;sub&gt;</code>) text is adopted, one which does not have side effects on line height.</li>
                         </ul>
 
                         <h3>Tables</h3>
 
                         <ul>
                             <li>The default border model is changed from <code>separated</code> to <code>collapsed</code>, which is more convenient for styling.</li>
-                            <li>Tables cells are configured to adjust their width automatically to best fit their content.</li>
+                            <li>Table cells are configured to adjust their width automatically to best fit their content.</li>
                         </ul>
 
                         <h3>Multimedia</h3>
@@ -171,7 +173,7 @@
 
                         <ul>
                             <li>Deprecated elements such as <code>&lt;acronym&gt;</code>, <code>&lt;center&gt;</code>, and <code>&lt;big&gt;</code> are not handled by this reset style sheet.</li>
-                            <li>This style sheet contains no class definitions. It is concerned exclusively with the adjusting of the default presentation of naked HTML elements.</li>
+                            <li>This style sheet contains no class definitions. It is concerned exclusively with the default presentation of naked HTML elements.</li>
                         </ul>
 
                     </div>

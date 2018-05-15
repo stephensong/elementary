@@ -255,8 +255,8 @@ ul::after {
 
 .CONTAINER {
     margin: 0 auto;
-    max-width: 80rem;
-    padding: 0 2rem;
+    max-width: 110rem;
+    padding: 0 5%;
 }
 
 .WRAPPER {
