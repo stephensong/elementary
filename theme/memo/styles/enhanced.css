@@ -109,7 +109,7 @@ var {
 @media screen and (min-width: 56.25rem) and (min-height: 37.5rem) {
 
     .WRAPPER {
-        padding: 4rem 0;
+        padding: 8rem 0;
     }
 
     .BANNER_LOGO {
@@ -134,5 +134,5 @@ var {
     .RichText h2 {
         margin-top: 8rem;
     }
-    
+
 }
